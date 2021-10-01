@@ -1,6 +1,6 @@
 # ludum-dare-49
 
-[Ludum Dare Jam 49](ldj.am/$258323)
+[Ludum Dare Jam 49](https://ldj.am/$258323)
 
 ### Theme
 ??
