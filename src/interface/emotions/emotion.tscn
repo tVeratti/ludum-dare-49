@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://interface/emotions/emotion.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.223529, 0.52549, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.839216, 0.576471, 0.298039, 1 )
+
+[node name="emotion" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="layout" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="left" type="Label" parent="layout"]
+margin_top = 293.0
+margin_right = 21.0
+margin_bottom = 307.0
+text = "left"
+
+[node name="progress" type="ProgressBar" parent="layout"]
+margin_left = 25.0
+margin_right = 125.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 100, 10 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 6.0
+step = 1.0
+value = 3.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="Label" parent="layout"]
+margin_left = 129.0
+margin_top = 293.0
+margin_right = 158.0
+margin_bottom = 307.0
+text = "right"

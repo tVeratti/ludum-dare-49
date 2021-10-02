@@ -7,21 +7,24 @@ class_name EmotionScale
 # If either extreme is reach (MIN or MAX) then the player is at risk of consequences.
 
 enum TYPES { RAGE, TERROR, VIGILANCE, AMAZEMENT, ECSTASY, GRIEF, ADMIRATION, LOATHING }
+enum SCALES { RAGE_TERROR, VIGILANCE_AMAZEMENT, ECSTASY_GRIEF, ADMIRATION_LOATHING }
 
 # Map emotion types to their opposites to create a scale.
 # [MIN_VALUE (0), MAX_VALUE (6)]
-const SCALES:Dictionary = {
-	RAGE_TERROR = [TYPES.RAGE, TYPES.TERROR],
-	VIGILANCE_AMAZEMENT = [TYPES.VIGILANCE, TYPES.AMAZEMENT], 
-	ECSTASY_GRIEF = [TYPES.ECSTASY, TYPES.GRIEF], 
-	ADMIRATION_LOATHING = [TYPES.ADMIRATION, TYPES.LOATHING]
+const SCALES_MAP:Dictionary = {
+	SCALES.RAGE_TERROR: [TYPES.RAGE, TYPES.TERROR],
+	SCALES.VIGILANCE_AMAZEMENT: [TYPES.VIGILANCE, TYPES.AMAZEMENT], 
+	SCALES.ECSTASY_GRIEF: [TYPES.ECSTASY, TYPES.GRIEF], 
+	SCALES.ADMIRATION_LOATHING: [TYPES.ADMIRATION, TYPES.LOATHING]
 }
+
+
 
 const MIN_VALUE:int = 0
 const MAX_VALUE:int = 6
 const NEUTRAL_VALUE:int = 3
 
-var scale:Array = SCALES.RAGE_TERROR
+var scale:int = SCALES.RAGE_TERROR
 var value:int = NEUTRAL_VALUE setget _set_value
 
 # Sometimes the game wants to know the values of individual emotions.
@@ -29,9 +32,16 @@ var value:int = NEUTRAL_VALUE setget _set_value
 var left:int setget , _get_left_value # 0, 1, 2
 var right:int setget , _get_right_value # 4, 5, 6
 
+var colors:Array setget , _get_colors
+
 
 func _init(_scale):
 	scale = _scale
+	
+	# Randomize initial value just a little bit
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	self.value = rng.randi_range(MIN_VALUE, MAX_VALUE)
 	
 
 func _set_value(v):
@@ -41,7 +51,7 @@ func _set_value(v):
 	
 	value = clamp(v, MIN_VALUE, MAX_VALUE)
 	
-	Signals.emit_signal("emotion_scale_changed", self)
+	Signals.emit_signal("emotion_changed", self)
 
 
 func _get_left_value():
@@ -54,3 +64,7 @@ func _get_right_value():
 	# value of 6 is maximum right
 	# any value less than 6 is further away
 	return clamp(value, NEUTRAL_VALUE, MAX_VALUE) - NEUTRAL_VALUE
+
+
+func _get_colors():
+	return Colors.get_colors(scale)

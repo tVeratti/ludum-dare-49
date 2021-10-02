@@ -16,14 +16,15 @@ export(Array, Resource) var scenarios:Array = []
 var possible_scenarios:Array = []
 var current_scenario:Scenario
 
-var player:Player = Player.new()
+var player:Player
 
 
 func _ready():
-	randomize()
+	player = Player.new()
 	
 	# Get all possible scenarios once at start.
 	# This array will be used for random selection.
+	randomize()
 	possible_scenarios = scenarios.duplicate()
 	possible_scenarios.shuffle()
 	
@@ -31,6 +32,7 @@ func _ready():
 	
 	Signals.connect("card_selected", self, "_on_card_selected")
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
+	
 
 
 func next_scenario():
@@ -49,20 +51,22 @@ func next_scenario():
 
 
 func _on_card_selected(card:Card):
+	# Get the relevant emotion modifier based on the card's type.
 	var relevant_emotion_value = player.get_emotion_raw(card.modifier_type)
 	var success_modifier = relevant_emotion_value * 10 # %
 	
 	var success_roll = int(rand_range(0, 100)) 
 	var success_threshold = 50 - success_modifier
 	
-	var outcome
-	if success_roll >= success_threshold:
-		outcome = card.success_outcome
-	else:
-		outcome = card.fail_outcome
-	
+	var outcome:Outcome = card.success_outcome if success_roll >= success_threshold else card.fail_outcome
 	if outcome == null: print("%s is missing an outcome definition" % card.title)
 	
+	# Apply the outcome modifiers to the player's emotions
+	player.rage_terror.value += outcome.rage_terror
+	player.vigilance_amazement.value += outcome.vigilance_amazement
+	player.ecstasy_grief.value += outcome.ecstasy_grief
+	player.admiration_loathing.value += outcome.admiration_loathing
+
 	Signals.emit_signal("outcome_triggered", outcome)
 
 
