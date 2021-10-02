@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ld49_cardflip.wav-17207919ee18faeb34977ba3c6ffe7c1.sample"
+
+[deps]
+
+source_file="res://assets/audio/ld49_cardflip.wav"
+dest_files=[ "res://.import/ld49_cardflip.wav-17207919ee18faeb34977ba3c6ffe7c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

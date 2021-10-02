@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ld49_uiclick.wav-8c0123e3ff55fa0de206e9e0bd5d5587.sample"
+
+[deps]
+
+source_file="res://assets/audio/ld49_uiclick.wav"
+dest_files=[ "res://.import/ld49_uiclick.wav-8c0123e3ff55fa0de206e9e0bd5d5587.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

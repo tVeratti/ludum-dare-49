@@ -10,6 +10,7 @@ onready var camera:Camera = get_viewport().get_camera()
 onready var mesh:MeshInstance = $mesh
 onready var move_tween:Tween = $move_tween
 onready var look_tween:Tween = $look_tween
+onready var flip_audio:AudioStreamPlayer = $flip_audio
 onready var label = $label3D
 
 var disabled:bool = false
@@ -38,6 +39,7 @@ func disable():
 func flip():
 	tween_look(Vector3(0, 180, 0))
 	tween_origin(target_hover)
+	flip_audio.play()
 
 
 func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
