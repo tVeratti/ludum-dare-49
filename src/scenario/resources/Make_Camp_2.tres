@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://scenario/scenario.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/cards/Oops-1a.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/outcomes/sample_outcome.tres" type="Resource" id=3]
+[ext_resource path="res://card/resources/outcomes/sample_outcome_2.tres" type="Resource" id=4]
+[ext_resource path="res://card/card.gd" type="Script" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 5 )
+title = "Did it!"
+flavor_text = "With the wind at your back, you find your way to the campsite easily. It's just as you remember it."
+outcomes = [ ExtResource( 3 ), ExtResource( 4 ) ]
+
+[resource]
+script = ExtResource( 1 )
+title = "Make Camp"
+flavor_text = "You drop your pack and plop to the ground. You made it to the campsite. The hike from the car was much longer than you remember, and let's be honest...you're out of practice. "
+order = 1
+cards = [ ExtResource( 2 ), SubResource( 1 ) ]
