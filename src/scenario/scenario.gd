@@ -1,6 +1,11 @@
-extends Node
+extends Resource
 
 class_name Scenario
+
+
+export(String) var flavor_text:String = ''
+export(Array, Resource) var cards:Array = []
+
 
 const DURATION:float = 30.0
 
