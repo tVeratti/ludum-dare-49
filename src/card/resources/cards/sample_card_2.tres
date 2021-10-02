@@ -8,6 +8,4 @@
 script = ExtResource( 1 )
 title = "It's fine."
 flavor_text = "Thinking about why you left home, you trip on a rock and fall to the ground."
-outcomes = [  ]
-success_outcome = ExtResource( 2 )
-fail_outcome = ExtResource( 3 )
+outcomes = [ ExtResource( 2 ), ExtResource( 3 ) ]

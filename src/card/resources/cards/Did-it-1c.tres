@@ -8,6 +8,4 @@
 script = ExtResource( 3 )
 title = "Did it!"
 flavor_text = "With the wind at your back, you find your way to the campsite easily. It's just as you remember it."
-modifier_type = 2
-success_outcome = ExtResource( 1 )
-fail_outcome = ExtResource( 2 )
+outcomes = [ ExtResource( 1 ), ExtResource( 2 ) ]

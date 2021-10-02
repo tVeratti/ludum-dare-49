@@ -8,4 +8,5 @@
 script = ExtResource( 1 )
 title = "Find Your Way"
 flavor_text = "You find yourself hiking on a familiar trail. Its been a while since you've hiked it, but muscle memory tells you where to go. You adjust the large pack on your back and think."
+order = 0
 cards = [ ExtResource( 2 ), ExtResource( 3 ) ]

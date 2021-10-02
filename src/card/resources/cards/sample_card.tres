@@ -8,6 +8,4 @@
 script = ExtResource( 1 )
 title = "CARD ONE"
 flavor_text = "Sample card that succeeds with higher GRIEF."
-outcomes = [  ]
-success_outcome = ExtResource( 2 )
-fail_outcome = ExtResource( 3 )
+outcomes = [ ExtResource( 2 ), ExtResource( 3 ) ]

@@ -51,22 +51,36 @@ func next_scenario():
 
 
 func _on_card_selected(card:Card):
+	var roll_total:int = 0
+	var roll_modifiers:Array = []
 	var roll_ranges:Array = []
+	var current_range:int = -1
+	
+	# I'm gonna trust indeces to stay the same...
+	# roll_percentage[1] should be card.outcomes[1]
 	
 	# Get outcome success thresholds
-	#for outcome in card.outcomes:
-		
+	for outcome in card.outcomes:
+		# Get the relevant emotion modifier based on the outcome's type.
+		var relevant_emotion_value = max(player.get_emotion_raw(outcome.modifier_type), 1)
+		roll_total += relevant_emotion_value
+		roll_modifiers.append(relevant_emotion_value)
 	
+	for roll in roll_modifiers:
+		var percentage = int((float(roll) / float(roll_total)) * 100)
+		roll_ranges.append([current_range + 1, current_range + percentage])
+		current_range += percentage
 	
-	# Get the relevant emotion modifier based on the card's type.
-	var relevant_emotion_value = player.get_emotion_raw(card.modifier_type)
-	var success_modifier = relevant_emotion_value * 10 # %
-	
-	var success_roll = int(rand_range(0, 100)) 
-	var success_threshold = 50 - success_modifier
-	
-	var outcome:Outcome = card.success_outcome if success_roll >= success_threshold else card.fail_outcome
-	if outcome == null: print("%s is missing an outcome definition" % card.title)
+	var roll_result = int(rand_range(0, 99))
+	var outcome
+	for index in range(roll_ranges.size()):
+		var roll_range = roll_ranges[index]
+		if roll_result > roll_range[0] and roll_result < roll_range[1]:
+			outcome = card.outcomes[index]
+			print("Outcome Roll: %s [%s - %s]" % [roll_result, roll_range[0], roll_range[1]])
+			break
+
+	if outcome == null: print("No outcome found on card %s" % card.title) 
 	
 	# Apply the outcome modifiers to the player's emotions
 	player.rage_terror.value += outcome.rage_terror

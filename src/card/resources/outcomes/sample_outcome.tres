@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-title = "First sample outcome"
+title = "Rage outcome"
 flavor_text = "Remove TERROR and add VIGILANCE"
 modifier_type = 0
 rage_terror = 1

@@ -23,7 +23,6 @@ const COLOR_MAP = {
 
 
 static func get_colors(scale):
-	print(EmotionScale.SCALES_MAP)
 	var test  = EmotionScale.SCALES_MAP[scale]
 	var left_emotion = EmotionScale.SCALES_MAP[scale][0]
 	var left_color:Color = Colors.COLOR_MAP[left_emotion]
