@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource( 1 )
 title = "Sample Scenario"
-flavor_text = "A basic sample scenario"
+flavor_text = "Sample flavor text"
 cards = [ ExtResource( 2 ), ExtResource( 3 ) ]
