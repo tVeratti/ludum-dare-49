@@ -8,10 +8,42 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Card",
+"language": "GDScript",
+"path": "res://card/card.gd"
+}, {
+"base": "Node",
+"class": "EmotionScale",
+"language": "GDScript",
+"path": "res://player/emotion.gd"
+}, {
+"base": "Resource",
+"class": "Outcome",
+"language": "GDScript",
+"path": "res://card/outcome.gd"
+}, {
+"base": "Node",
+"class": "Scenario",
+"language": "GDScript",
+"path": "res://scenario/scenario.gd"
+} ]
+_global_script_class_icons={
+"Card": "",
+"EmotionScale": "",
+"Outcome": "",
+"Scenario": ""
+}
+
 [application]
 
 config/name="ludum-dare-49"
 config/icon="res://icon.png"
+
+[autoload]
+
+Signals="*res://infrastructure/signals.gd"
 
 [physics]
 
