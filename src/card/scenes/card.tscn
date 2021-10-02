@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://card/placeholder.png" type="Texture" id=1]
 [ext_resource path="res://card/scenes/card.gd" type="Script" id=2]
 [ext_resource path="res://common/label3D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/audio/ld49_cardflip.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/ld49_cardlift.wav" type="AudioStream" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -39,6 +40,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.376167, 0 )
 [node name="flip_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = 5.0
+
+[node name="hover_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
 
 [connection signal="input_event" from="mesh/Area" to="." method="_on_Area_input_event"]
 [connection signal="mouse_entered" from="mesh/Area" to="." method="_on_Area_mouse_entered"]

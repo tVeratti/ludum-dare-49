@@ -11,6 +11,7 @@ onready var mesh:MeshInstance = $mesh
 onready var move_tween:Tween = $move_tween
 onready var look_tween:Tween = $look_tween
 onready var flip_audio:AudioStreamPlayer = $flip_audio
+onready var hover_audio:AudioStreamPlayer = $hover_audio
 onready var label = $label3D
 
 var disabled:bool = false
@@ -69,6 +70,10 @@ func tween_look(target):
 func _on_Area_mouse_entered():
 	if not disabled:
 		tween_origin(target_hover)
+		# Modify the pitch just a TINY bit...
+		var pitch_mod = rand_range(-0.1, 0.1)
+		hover_audio.pitch_scale = 1 + pitch_mod
+		hover_audio.play()
 
 
 func _on_Area_mouse_exited():
