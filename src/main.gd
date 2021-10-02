@@ -18,6 +18,8 @@ var current_scenario:Scenario
 
 var player:Player
 
+onready var cards:Spatial = $cards
+
 
 func _ready():
 	player = Player.new()

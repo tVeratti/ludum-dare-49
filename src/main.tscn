@@ -1,19 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/sample_scenario.tres" type="Resource" id=2]
 [ext_resource path="res://interface/scenario.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/emotions/emotions.tscn" type="PackedScene" id=4]
+[ext_resource path="res://card/scenes/cards.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/background_placeholder.png" type="Texture" id=6]
 
 [node name="main" type="Spatial"]
 script = ExtResource( 1 )
 scenarios = [ ExtResource( 2 ), ExtResource( 2 ) ]
+
+[node name="background" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16695 )
+texture = ExtResource( 6 )
+
+[node name="cards" parent="." instance=ExtResource( 5 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.38162 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 custom_constants/margin_right = 30
 custom_constants/margin_top = 30
 custom_constants/margin_left = 30
@@ -26,7 +38,7 @@ __meta__ = {
 margin_left = 30.0
 margin_top = 30.0
 margin_right = 188.0
-margin_bottom = 288.0
+margin_bottom = 278.0
 custom_constants/separation = 100
 __meta__ = {
 "_edit_use_anchors_": false
@@ -43,4 +55,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 186.0
 margin_right = 158.0
-margin_bottom = 258.0
+margin_bottom = 248.0
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.943373, 0.331733, 0, -0.331733, 0.943373, 0, 1.75788, 12.186 )

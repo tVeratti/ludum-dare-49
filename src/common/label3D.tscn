@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://common/label3D.gd" type="Script" id=1]
+
+[node name="label3D" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="layout" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="layout"]
+visible = false
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="layout"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+rect_pivot_offset = Vector2( 50, 50 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "test"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
