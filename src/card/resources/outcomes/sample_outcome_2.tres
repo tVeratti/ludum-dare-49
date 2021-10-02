@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource( 1 )
-title = "First sample outcome"
-flavor_text = "Remove TERROR and add VIGILANCE"
-rage_terror = 1
-vigilance_amazement = -1
-ecstasy_grief = 0
+title = "Second outcome sample."
+flavor_text = "Remove GRIEF and add RAGE"
+rage_terror = -1
+vigilance_amazement = 0
+ecstasy_grief = 1
 admiration_loathing = 0

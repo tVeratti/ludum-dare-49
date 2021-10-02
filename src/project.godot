@@ -51,7 +51,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Signals="*res://infrastructure/signals.gd"
-State="*res://infrastructure/state.gd"
 
 [physics]
 

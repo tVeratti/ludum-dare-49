@@ -5,15 +5,15 @@ class_name Player
 # Emotions
 # ----------------------------
 var emotions:Dictionary = {
-	[EmotionScale.SCALES.RAGE_TERROR]: EmotionScale.new(EmotionScale.SCALES.RAGE_TERROR),
-	[EmotionScale.SCALES.VIGILANCE_AMAZEMENT]: EmotionScale.new(EmotionScale.SCALES.VIGILANCE_AMAZEMENT),
-	[EmotionScale.SCALES.ECSTASY_GRIEF]: EmotionScale.new(EmotionScale.SCALES.ECSTASY_GRIEF),
-	[EmotionScale.SCALES.ADMIRATION_LOATHING]: EmotionScale.new(EmotionScale.SCALES.ADMIRATION_LOATHING),
+	RAGE_TERROR = EmotionScale.new(EmotionScale.SCALES.RAGE_TERROR),
+	VIGILANCE_AMAZEMENT = EmotionScale.new(EmotionScale.SCALES.VIGILANCE_AMAZEMENT),
+	ECSTASY_GRIEF = EmotionScale.new(EmotionScale.SCALES.ECSTASY_GRIEF),
+	ADMIRATION_LOATHING = EmotionScale.new(EmotionScale.SCALES.ADMIRATION_LOATHING),
 }
 
 # Quick references to the above emotions dictionary
 # Naming convention is important to understand which side each emotion is on.
-# Example `rage_terror`: rage is MIN (0) / terror is MAX (7)
+# Example `rage_terror`: rage is MIN (0) / terror is MAX (6)
 var rage_terror setget , _get_rage_terror
 var vigilance_amazement setget , _get_vigilance_amazement
 var ecstasy_grief setget , _get_ecstasy_grief
@@ -24,12 +24,25 @@ func _ready():
 	Signals.connect("outcome_triggered", self, "_on_outcome_triggered")
 
 
+func get_emotion_raw(type:int) -> int:
+	match(type):
+		EmotionScale.TYPES.RAGE: return self.rage_terror.left
+		EmotionScale.TYPES.TERROR: return self.rage_terror.right
+		EmotionScale.TYPES.VIGILANCE: return self.vigilance_amazement.left
+		EmotionScale.TYPES.AMAZEMENT: return self.vigilance_amazement.right
+		EmotionScale.TYPES.ECSTASY: return self.ecstasy_grief.left
+		EmotionScale.TYPES.GRIEF: return self.ecstasy_grief.right
+		EmotionScale.TYPES.ADMIRATION: return self.admiration_loathing.left
+		EmotionScale.TYPES.LOATHING: return self.rage_terror.right
+		_: return 0
+
+
 # Emotions Getters
 # ----------------------------
-func _get_rage_terror(): emotions[EmotionScale.SCALES.RAGE_TERROR]
-func _get_vigilance_amazement(): emotions[EmotionScale.SCALES.VIGILANCE_AMAZEMENT]
-func _get_ecstasy_grief(): emotions[EmotionScale.SCALES.ECSTASY_GRIEF]
-func _get_admiration_loathing(): emotions[EmotionScale.SCALES.ADMIRATION_LOATHING]
+func _get_rage_terror(): return emotions.RAGE_TERROR
+func _get_vigilance_amazement(): return emotions.VIGILANCE_AMAZEMENT
+func _get_ecstasy_grief(): return emotions.ECSTASY_GRIEF
+func _get_admiration_loathing(): return emotions.ADMIRATION_LOATHING
 
 
 # Signals

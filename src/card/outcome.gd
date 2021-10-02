@@ -5,6 +5,7 @@ class_name Outcome
 # An Outcome is triggered when the player selects a card during a scenario.
 # Outcomes are assigned to either a success or fail state, and their modifiers are then applied.
 
+export(String) var title:String = ''
 export(String) var flavor_text:String = ''
 
 # These modifers are applied to the player's scales.
