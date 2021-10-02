@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://card/placeholder.png" type="Texture" id=1]
 [ext_resource path="res://card/scenes/card.gd" type="Script" id=2]
@@ -13,21 +13,6 @@ uv1_scale = Vector3( 3, 2, 1 )
 [sub_resource type="ConcavePolygonShape" id=3]
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "flip"
-tracks/0/type = "value"
-tracks/0/path = NodePath("mesh:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 0.482968, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 180, 0 ) ]
-}
-
 [node name="card" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -36,16 +21,20 @@ transform = Transform( 0.7, 0, 0, 0, 1, 0, 0, 0, 0.01, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
+[node name="Area" type="Area" parent="mesh"]
+transform = Transform( 1.42857, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="mesh/Area"]
+transform = Transform( 0.8, 0, 0, 0, 1.1, 0, 0, 0, 0.01, 0, 0, 0 )
+shape = SubResource( 3 )
+
 [node name="label3D" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.376167, 0 )
 
-[node name="Area" type="Area" parent="."]
+[node name="move_tween" type="Tween" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 0.7, 0, 0, 0, 1, 0, 0, 0, 0.01, 0, 0, 0 )
-shape = SubResource( 3 )
+[node name="look_tween" type="Tween" parent="."]
 
-[node name="flip_animation" type="AnimationPlayer" parent="."]
-anims/flip = SubResource( 4 )
-
-[connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
+[connection signal="input_event" from="mesh/Area" to="." method="_on_Area_input_event"]
+[connection signal="mouse_entered" from="mesh/Area" to="." method="_on_Area_mouse_entered"]
+[connection signal="mouse_exited" from="mesh/Area" to="." method="_on_Area_mouse_exited"]

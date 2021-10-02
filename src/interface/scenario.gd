@@ -5,7 +5,7 @@ extends Control
 onready var title:Label = $title
 onready var flavor:Label = $flavor
 onready var outcome:Label = $outcome
-onready var next:Button	= $next
+onready var next:Button = $next
 
 
 func _ready():
@@ -19,7 +19,6 @@ func _on_scenario_entered(scenario:Scenario):
 	
 	# Hide previous outcome information
 	outcome.visible = false
-
 	
 
 func _on_outcome_triggered(_outcome:Outcome):

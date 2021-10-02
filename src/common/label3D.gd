@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var camera:Camera = get_node('/root').get_viewport().get_camera()
+onready var camera:Camera = get_viewport().get_camera()
 onready var layout:MarginContainer = $layout
 onready var label:Label = $layout/label
 

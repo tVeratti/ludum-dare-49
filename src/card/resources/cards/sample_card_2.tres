@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource( 1 )
-title = "CARD ONE"
-flavor_text = "Sample card that succeeds with higher GRIEF."
-modifier_type = 0
+title = "CARD TWO"
+flavor_text = "Another sample card!"
+modifier_type = 1
 success_outcome = ExtResource( 2 )
 fail_outcome = ExtResource( 3 )
