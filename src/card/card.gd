@@ -5,8 +5,8 @@ class_name Card
 export(String) var title:String = ''
 export(String) var flavor_text:String = ''
 
-# The modifier that increases the chance of "success" state
-export(EmotionScale.TYPES) var modifier_type:int = EmotionScale.TYPES.RAGE
+export(Array, Resource) var outcomes:Array = []
+
 
 # Outcome resources
 export(Resource) var success_outcome

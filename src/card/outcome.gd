@@ -8,6 +8,9 @@ class_name Outcome
 export(String) var title:String = ''
 export(String) var flavor_text:String = ''
 
+# The modifier that increases the chance of "success" state
+export(EmotionScale.TYPES) var modifier_type:int = EmotionScale.TYPES.RAGE
+
 # These modifers are applied to the player's scales.
 # 	Positive values push the scale towards the left emotion.
 # 	Negative values push the scale towards the right emotion.

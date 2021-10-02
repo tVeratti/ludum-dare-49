@@ -8,4 +8,5 @@
 script = ExtResource( 1 )
 title = "Sample Scenario"
 flavor_text = "Sample flavor text"
+order = 0
 cards = [ ExtResource( 2 ), ExtResource( 3 ) ]

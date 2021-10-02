@@ -25,16 +25,14 @@ func _ready():
 	player = Player.new()
 	
 	# Get all possible scenarios once at start.
-	# This array will be used for random selection.
-	randomize()
+	# Order them based on that property.
 	possible_scenarios = scenarios.duplicate()
-	possible_scenarios.shuffle()
+	possible_scenarios.sort_custom(Scenario, "sort_self")
 	
 	next_scenario()
 	
 	Signals.connect("card_selected", self, "_on_card_selected")
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
-	
 
 
 func next_scenario():
@@ -53,6 +51,13 @@ func next_scenario():
 
 
 func _on_card_selected(card:Card):
+	var roll_ranges:Array = []
+	
+	# Get outcome success thresholds
+	#for outcome in card.outcomes:
+		
+	
+	
 	# Get the relevant emotion modifier based on the card's type.
 	var relevant_emotion_value = player.get_emotion_raw(card.modifier_type)
 	var success_modifier = relevant_emotion_value * 10 # %
