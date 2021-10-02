@@ -11,6 +11,7 @@ bg_color = Color( 0.839216, 0.576471, 0.298039, 1 )
 [node name="emotion" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

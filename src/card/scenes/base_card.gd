@@ -1,13 +1,15 @@
 extends Spatial
 
+class_name BaseCard
+
 const HOVER_OFFSET = 0.8
 
-var card:Card
 var target_offset:Vector3 = Vector3.ZERO
 
 onready var camera:Camera = get_viewport().get_camera()
 
-onready var mesh:MeshInstance = $mesh
+onready var front_mesh:MeshInstance = $front_mesh
+onready var back_mesh:MeshInstance = $back_mesh
 onready var move_tween:Tween = $move_tween
 onready var look_tween:Tween = $look_tween
 onready var flip_audio:AudioStreamPlayer = $flip_audio
@@ -20,8 +22,7 @@ var target_hover:Vector3
 
 
 func _ready():
-	# set mesh texture?
-	label.text = card.title
+	# set mesh textures?
 	
 	# Snapshot some resting postional values.
 	target_origin = global_transform.origin + target_offset
@@ -29,8 +30,9 @@ func _ready():
 	target_hover = target_origin + (camera_direction * HOVER_OFFSET)
 	
 	# Move to its starting offset.
-	move_tween.interpolate_property(self, "translation", translation, target_offset, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	move_tween.start()
+	if target_offset.length() > 0:
+		move_tween.interpolate_property(self, "translation", translation, target_offset, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		move_tween.start()
 
 
 func disable():
@@ -50,11 +52,19 @@ func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx
 			look_at(look_offset, Vector3.UP)
 		elif event is InputEventMouseButton and event.pressed:
 			flip()
-			card.select()
+			activate()
+
+
+func activate():
+	pass # overwrite by action or scenario
+
+
+func hover():
+	pass # overwrite by action or scenario
 
 
 func get_size():
-	return mesh.get_aabb().size
+	return front_mesh.get_aabb().size
 
 
 func tween_origin(target):
@@ -69,6 +79,7 @@ func tween_look(target):
 
 func _on_Area_mouse_entered():
 	if not disabled:
+		hover()
 		tween_origin(target_hover)
 		# Modify the pitch just a TINY bit...
 		var pitch_mod = rand_range(-0.1, 0.1)

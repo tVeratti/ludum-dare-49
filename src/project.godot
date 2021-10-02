@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Spatial",
+"class": "BaseCard",
+"language": "GDScript",
+"path": "res://card/scenes/base_card.gd"
+}, {
 "base": "Resource",
 "class": "Card",
 "language": "GDScript",
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://scenario/scenario.gd"
 } ]
 _global_script_class_icons={
+"BaseCard": "",
 "Card": "",
 "EmotionScale": "",
 "Outcome": "",

@@ -38,4 +38,5 @@ anchor_bottom = 0.0
 margin_top = 72.0
 margin_right = 1024.0
 margin_bottom = 86.0
+mouse_filter = 2
 scale = 3

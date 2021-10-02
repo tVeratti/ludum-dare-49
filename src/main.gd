@@ -18,7 +18,7 @@ var current_scenario:Scenario
 
 var player:Player
 
-onready var cards:Spatial = $cards
+onready var hand:Spatial = $hand
 
 
 func _ready():
@@ -39,11 +39,13 @@ func next_scenario():
 	# Pop from the array of possibilities so it cannot be chosen again.
 	current_scenario = possible_scenarios.pop_back()
 	
+	# Reset all board stuff so they can click the scenario to "enter" it
+	
 	if current_scenario == null:
 		# End of game
 		pass
 	else:
-		Signals.emit_signal("scenario_entered", current_scenario)
+		Signals.emit_signal("scenario_ready", current_scenario)
 
 
 # Signals

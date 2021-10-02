@@ -9,22 +9,30 @@ onready var next:Button = $next
 
 
 func _ready():
-	Signals.connect("scenario_entered", self, "_on_scenario_entered")
+	Signals.connect("scenario_requested", self, "_on_scenario_requested")
+	Signals.connect("scenario_ready", self, "_on_scenario_ready")
+	Signals.connect("scenario_started", self, "_on_scenario_started")
 	Signals.connect("outcome_triggered", self, "_on_outcome_triggered")
 
 
-func _on_scenario_entered(scenario:Scenario):
+func _on_scenario_requested():
+	# Clear out the previous scenario
+	title.text = ""
+	flavor.text = ""
+	outcome.text = ""
+
+
+func _on_scenario_ready(scenario):
+	pass
+
+
+func _on_scenario_started(scenario:Scenario):
 	title.text = scenario.title
 	flavor.text = scenario.flavor_text
-	
-	# Hide previous outcome information
-	outcome.visible = false
-	
+
 
 func _on_outcome_triggered(_outcome:Outcome):
-	outcome.text = "%s\n%s" % [_outcome.title, _outcome.flavor_text]
-	outcome.visible = true
-	
+	outcome.text = "%s\n%s" % [_outcome.title, _outcome.flavor_text]	
 	next.visible = true
 	next.disabled = false
 
