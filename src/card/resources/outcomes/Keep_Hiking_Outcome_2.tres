@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Nature's Neat"
+flavor_text = "With the wind at your back and the sun on your face, you hear birds singing all around. It feels serene."
+modifier_type = 4
+rage_terror = 0
+vigilance_amazement = 1
+ecstasy_grief = -1
+admiration_loathing = 0
