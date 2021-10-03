@@ -112,6 +112,7 @@ func _on_Area_mouse_entered():
 func _on_Area_mouse_exited():
 	if not disabled:
 		hovered = false
+		Signals.emit_signal("card_unhovered")
 		tween_look(Vector3.ZERO)
 		tween_origin(target_origin)
 

@@ -19,7 +19,6 @@ const SCALES_MAP:Dictionary = {
 }
 
 
-
 const MIN_VALUE:int = 0
 const MAX_VALUE:int = 6
 const NEUTRAL_VALUE:int = 3

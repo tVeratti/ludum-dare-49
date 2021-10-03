@@ -23,6 +23,7 @@ var player:Player
 onready var hand:Spatial = $hand
 onready var river:Spatial = $scenario/river
 onready var river_animations:AnimationPlayer = $scenario/river_animations
+onready var card_flavor = $CanvasLayer/card_flavor
 
 var card_selected:bool = false
 
@@ -40,6 +41,8 @@ func _ready():
 	Signals.connect("card_selected", self, "_on_card_selected")
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 	Signals.connect("scenario_started", self, "_on_scenario_started")
+	Signals.connect("card_hovered", self, "_on_card_hovered")
+	Signals.connect("card_unhovered", self, "_on_card_unhovered")
 
 
 func next_scenario():
@@ -119,7 +122,16 @@ func _on_scenario_started(scenario):
 
 
 func _on_scenario_requested():
+	card_flavor.label = ""
 	next_scenario()
+
+
+func _on_card_hovered(card):
+	card_flavor.label = card.title
+
+
+func _on_card_unhovered():
+	card_flavor.label = ""
 
 
 func _on_river_animation_finished(anim_name):

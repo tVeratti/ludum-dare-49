@@ -25,5 +25,9 @@ func _on_scenario_timed_out(random_card):
 		activate()
 
 
+func hover():
+	Signals.emit_signal("card_hovered", card)
+
+
 func activate():
 	Signals.emit_signal("card_selected", card)
