@@ -8,6 +8,6 @@ title = "Ecstasy outcome"
 flavor_text = "Remove GRIEF and add RAGE"
 modifier_type = 4
 rage_terror = -1
-vigilance_amazement = 0
+vigilance_amazement = 1
 ecstasy_grief = 1
 admiration_loathing = 0

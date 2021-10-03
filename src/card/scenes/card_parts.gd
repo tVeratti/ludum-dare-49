@@ -45,19 +45,28 @@ func render_parts():
 		
 		var facey = TextureRect.new()
 		facey.texture = Symbols.get_symbol(type)
-		print(facey.texture)
 		container.add_child(facey)
 		
+#		var label = Label.new()
+#		label.text = "%s" %  part[1]
+#		container.add_child(label)
 		
 		layout.add_child(container)
 
 
 func add_part_type(value, key):
 	var emotion = EmotionScale.SCALES_MAP[key]
+	var labels = EmotionScale.get_labels(key)
 	
 	var type
-	if value == 0: return
-	elif value < 0: type = emotion[0]
-	else: type = emotion[1]
+	var label
 	
-	parts.append([type, abs(value)])
+	if value == 0: return
+	elif value < 0:
+		type = emotion[0]
+		label = labels[0]
+	else:
+		type = emotion[1]
+		label = labels[1]
+	
+	parts.append([type, abs(value), label])
