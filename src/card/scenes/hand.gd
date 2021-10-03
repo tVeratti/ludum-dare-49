@@ -20,10 +20,10 @@ func render_cards(scenario:Scenario):
 	for card in scenario.cards:
 		var card_button = CardScene.instance()
 		card_button.card = card
-		card_button.target_offset = offset
+		card_button.target_offset = offset + Vector3(0, 0, -.1)
 		
 		# Delay each card just a tiny bit for a dealing effect
-		yield(get_tree().create_timer(0.3), "timeout")
+		yield(get_tree().create_timer(0.5), "timeout")
 		cards.add_child(card_button)
 		
 		offset += Vector3(CARD_OFFSET, 0, 0)

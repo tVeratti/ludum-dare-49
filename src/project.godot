@@ -58,6 +58,7 @@ config/icon="res://icon.png"
 
 Signals="*res://infrastructure/signals.gd"
 Colors="*res://infrastructure/colors.gd"
+Symbols="*res://infrastructure/symbols.gd"
 
 [physics]
 

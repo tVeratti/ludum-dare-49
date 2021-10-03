@@ -1,23 +1,37 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/audio/ld49_carddeal.wav" type="AudioStream" id=1]
 [ext_resource path="res://card/scenes/base_card.gd" type="Script" id=2]
 [ext_resource path="res://common/label3D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/audio/ld49_cardflip.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/audio/ld49_cardlift.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/textures/cardfront_base.png" type="Texture" id=7]
+[ext_resource path="res://card/scenes/card_parts.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/textures/cardback_nature.png" type="Texture" id=8]
 
-[sub_resource type="ConcavePolygonShape" id=3]
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="ConcavePolygonShape" id=2]
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
 [node name="card" type="Spatial"]
 script = ExtResource( 2 )
 
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 45, 73 )
+own_world = true
+transparent_bg = true
+usage = 0
+
+[node name="card_parts" parent="Viewport" instance=ExtResource( 6 )]
+margin_right = 45.0
+margin_bottom = 73.0
+
 [node name="front_mesh" type="Sprite3D" parent="."]
-transform = Transform( 2.79705, 0, 0, 0, 2.53195, 0, 0, 0, 1, -0.005, 0, -0.001 )
+transform = Transform( 2.79705, 0, 0, 0, 2.53195, 0, 0, 0, 1, 0, 0, -0.001 )
+flip_v = true
 alpha_cut = 2
-texture = ExtResource( 7 )
+texture = SubResource( 1 )
 
 [node name="back_mesh" type="Sprite3D" parent="."]
 transform = Transform( 2.79705, 0, 0, 0, 2.53195, 0, 0, 0, 1, 0, 0, 0.001 )
@@ -29,7 +43,7 @@ transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 0.8, 0, 0, 0, 1.1, 0, 0, 0, 0.01, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="label3D" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.06542, 0 )

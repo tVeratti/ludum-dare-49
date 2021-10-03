@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://card/scenes/card_parts.gd" type="Script" id=1]
+
+[node name="card_parts" type="MarginContainer"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="layout" type="VBoxContainer" parent="."]
+margin_right = 45.0
+margin_bottom = 73.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -8,7 +8,7 @@ extends Spatial
 #	Card flips over to reveal success or failure outcome
 #	Apply modifiers to emotion scales
 
-var ScenarioCard = preload("res://scenario/scenes/scenario_card.tscn")
+var ScenarioCard = load("res://scenario/scenes/scenario_card.tscn")
 
 
 # Add all scenarios that can appear in a game through editor

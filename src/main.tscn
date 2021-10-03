@@ -1,14 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/sample_scenario.tres" type="Resource" id=2]
 [ext_resource path="res://interface/scenario.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/emotions/emotions.tscn" type="PackedScene" id=4]
 [ext_resource path="res://card/scenes/hand.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/background_placeholder.png" type="Texture" id=6]
 [ext_resource path="res://scenario/resources/Find_your_way_1.tres" type="Resource" id=7]
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+albedo_color = Color( 0.266667, 0.266667, 0.266667, 1 )
+
+[sub_resource type="Environment" id=1]
 background_mode = 1
 background_color = Color( 0.85098, 0.968627, 1, 1 )
 ambient_light_color = Color( 0.454902, 0.454902, 0.454902, 1 )
@@ -19,15 +24,19 @@ tonemap_mode = 2
 script = ExtResource( 1 )
 scenarios = [ ExtResource( 2 ), ExtResource( 7 ) ]
 
-[node name="background" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16695 )
-texture = ExtResource( 6 )
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 0, -2.69573 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="hand" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32742, -2.03782, -0.755985 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02006, -2, -1 )
+
+[node name="scenario" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02006, 0.546173, -1 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.38162 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.74636 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -79,7 +88,4 @@ margin_bottom = 540.0
 transform = Transform( 0.996651, 0.0615643, 0.0538131, -0.0815891, 0.792268, 0.604694, -0.00540686, -0.607059, 0.794638, 0, 1.75788, 12.2908 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
-
-[node name="scenario" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91585, 0.597567, 0 )
+environment = SubResource( 1 )

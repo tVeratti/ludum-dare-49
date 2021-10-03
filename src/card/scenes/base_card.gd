@@ -17,6 +17,8 @@ onready var hover_audio:AudioStreamPlayer = $hover_audio
 onready var place_audio:AudioStreamPlayer = $place_audio
 onready var label = $label3D
 
+onready var card_parts = $Viewport/card_parts
+
 var disabled:bool = false
 var hovered:bool = false
 var target_origin:Vector3
@@ -25,7 +27,7 @@ var target_hover:Vector3
 var positioned:bool = false
 
 
-func _ready():	
+func _ready():
 	# Snapshot some resting postional values.
 	target_origin = global_transform.origin + target_offset
 	var camera_direction = (camera.global_transform.origin - target_origin).normalized()
