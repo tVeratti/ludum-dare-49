@@ -27,26 +27,29 @@ usage = 0
 margin_right = 45.0
 margin_bottom = 73.0
 
-[node name="front_mesh" type="Sprite3D" parent="."]
-transform = Transform( 2.79705, 0, 0, 0, 2.53195, 0, 0, 0, 1, 0, 0, -0.001 )
+[node name="display" type="Spatial" parent="."]
+
+[node name="front_mesh" type="Sprite3D" parent="display"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.001 )
 flip_v = true
 alpha_cut = 2
 texture = SubResource( 1 )
 
-[node name="back_mesh" type="Sprite3D" parent="."]
-transform = Transform( 2.79705, 0, 0, 0, 2.53195, 0, 0, 0, 1, 0, 0, 0.001 )
+[node name="back_mesh" type="Sprite3D" parent="display"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001 )
 alpha_cut = 2
 texture = ExtResource( 8 )
 
-[node name="Area" type="Area" parent="."]
-transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
+[node name="Area" type="Area" parent="display"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 0.8, 0, 0, 0, 1.1, 0, 0, 0, 0.01, 0, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="display/Area"]
+transform = Transform( 0.3, 0, 0, 0, 0.4, 0, 0, 0, 0.01, 0, 0, 0 )
 shape = SubResource( 2 )
 
-[node name="label3D" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.06542, 0 )
+[node name="label3D" parent="display" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.506767, 0 )
+visible = false
 
 [node name="move_tween" type="Tween" parent="."]
 
@@ -62,7 +65,7 @@ volume_db = -10.0
 [node name="place_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 
-[connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
-[connection signal="mouse_entered" from="Area" to="." method="_on_Area_mouse_entered"]
-[connection signal="mouse_exited" from="Area" to="." method="_on_Area_mouse_exited"]
+[connection signal="input_event" from="display/Area" to="." method="_on_Area_input_event"]
+[connection signal="mouse_entered" from="display/Area" to="." method="_on_Area_mouse_entered"]
+[connection signal="mouse_exited" from="display/Area" to="." method="_on_Area_mouse_exited"]
 [connection signal="tween_all_completed" from="move_tween" to="." method="_on_move_tween_tween_all_completed"]

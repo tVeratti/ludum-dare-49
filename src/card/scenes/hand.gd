@@ -2,7 +2,7 @@ extends Spatial
 
 var CardScene = load("res://card/scenes/action_card.tscn")
 
-const CARD_OFFSET = 1.5
+const CARD_OFFSET = 0.8
 
 
 onready var cards:Spatial = $cards

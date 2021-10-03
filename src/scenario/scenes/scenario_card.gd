@@ -2,10 +2,13 @@ extends BaseCard
 
 var scenario:Scenario
 
+onready var float_animation:AnimationPlayer = $float_animation
+
 
 func _ready():
 	label.text = scenario.title
-	
+	float_animation.play("float")
+
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 
 

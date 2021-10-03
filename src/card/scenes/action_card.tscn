@@ -9,5 +9,5 @@ viewport_path = NodePath("Viewport")
 [node name="action_card" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="front_mesh" parent="." index="1"]
+[node name="front_mesh" parent="display" index="0"]
 texture = SubResource( 1 )

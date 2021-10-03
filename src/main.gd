@@ -21,7 +21,10 @@ var current_scenario:Scenario
 var player:Player
 
 onready var hand:Spatial = $hand
-onready var scenario_root:Spatial = $scenario
+onready var river:Spatial = $scenario/river
+onready var river_animations:AnimationPlayer = $scenario/river_animations
+
+var card_selected:bool = false
 
 
 func _ready():
@@ -36,6 +39,7 @@ func _ready():
 	
 	Signals.connect("card_selected", self, "_on_card_selected")
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
+	Signals.connect("scenario_started", self, "_on_scenario_started")
 
 
 func next_scenario():
@@ -51,7 +55,12 @@ func next_scenario():
 		var scenario_card = ScenarioCard.instance()
 		scenario_card.scenario = current_scenario
 		scenario_card.target_offset = Vector3(1, 0, 0)
-		scenario_root.add_child(scenario_card)
+		
+		river_animations.stop(true)
+		river.translation = Vector3.ZERO
+		
+		river.add_child(scenario_card)
+		print(current_scenario.title)
 		Signals.emit_signal("scenario_ready", current_scenario)
 
 
@@ -60,6 +69,9 @@ func next_scenario():
 
 
 func _on_card_selected(card:Card):
+	river_animations.stop()
+	card_selected = true
+	
 	var roll_total:int = 0
 	var roll_modifiers:Array = []
 	var roll_ranges:Array = []
@@ -100,5 +112,20 @@ func _on_card_selected(card:Card):
 	Signals.emit_signal("outcome_triggered", outcome)
 
 
+func _on_scenario_started(scenario):
+	card_selected = false
+	river_animations.play("move")
+	river_animations.seek(0, true)
+
+
 func _on_scenario_requested():
 	next_scenario()
+
+
+func _on_river_animation_finished(anim_name):
+	# Select a random card since the animation timed out
+	if not card_selected:
+		var cards = current_scenario.cards.duplicate()
+		cards.shuffle()
+		
+		Signals.emit_signal("scenario_timed_out", cards.pop_back())

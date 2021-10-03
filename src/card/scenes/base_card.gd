@@ -8,14 +8,15 @@ var target_offset:Vector3 = Vector3.ZERO
 
 onready var camera:Camera = get_viewport().get_camera()
 
-onready var front_mesh:Sprite3D = $front_mesh
-onready var back_mesh:Sprite3D = $back_mesh
+onready var front_mesh:Sprite3D = $display/front_mesh
+onready var back_mesh:Sprite3D = $display/back_mesh
 onready var move_tween:Tween = $move_tween
 onready var look_tween:Tween = $look_tween
 onready var flip_audio:AudioStreamPlayer = $flip_audio
 onready var hover_audio:AudioStreamPlayer = $hover_audio
 onready var place_audio:AudioStreamPlayer = $place_audio
-onready var label = $label3D
+onready var label = $display/label3D
+onready var display = $display
 
 onready var card_parts = $Viewport/card_parts
 
