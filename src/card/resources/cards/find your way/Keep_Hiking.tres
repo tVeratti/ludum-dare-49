@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/outcomes/find your way/Keep_Hiking_Outcome_3.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/outcomes/find your way/Keep_Hiking_Outcome_2.tres" type="Resource" id=3]
+[ext_resource path="res://card/resources/outcomes/find your way/Keep_Hiking_Outcome_1.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "Keep Hiking"
+flavor_text = ""
+outcomes = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]

@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://scenario/scenario.gd" type="Script" id=1]
-[ext_resource path="res://card/resources/cards/Keep_Hiking.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/cards/find your way/Visit_Scenic_Overlook.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/cards/find your way/Keep_Hiking.tres" type="Resource" id=3]
+[ext_resource path="res://card/resources/cards/find your way/Listen_To_Nature.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
 title = "Find Your Way"
 flavor_text = "You find yourself hiking on a familiar trail. Its been a while since you've hiked it, but muscle memory tells you where to go. You adjust the large pack on your back and think."
 order = 0
-cards = [ ExtResource( 2 ) ]
+cards = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]

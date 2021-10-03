@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Oooo!"
+flavor_text = "With a deep breath, you look up into the canopy of trees that seem to hug you. You spot a Kirtland Warbler - a beautiful songbird - that feels like it's singing for you."
+modifier_type = 3
+rage_terror = 0
+vigilance_amazement = 2
+ecstasy_grief = -1
+admiration_loathing = 0

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Hiss!"
+flavor_text = "You stop hiking, close your eyes, and take in a deep breath. When you open them, you see a rattlesnake slither through the leaves and across the trail. "
+modifier_type = 1
+rage_terror = 1
+vigilance_amazement = 0
+ecstasy_grief = 0
+admiration_loathing = -1

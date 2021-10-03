@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Yum!"
+flavor_text = "You find a cozy seat on a gigantic rock. It's warm from the sun, and you don't see too many bugs around. You unpack your lunch and enjoy the fall foliage."
+modifier_type = 4
+rage_terror = 0
+vigilance_amazement = 1
+ecstasy_grief = -2
+admiration_loathing = 0

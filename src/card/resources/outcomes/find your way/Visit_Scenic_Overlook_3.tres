@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "NOOOO!"
+flavor_text = "You enjoy the lovely view and take out your map to see what's across the way. As you're fumbling with it, it slips from your hands and falls into the ravine."
+modifier_type = 1
+rage_terror = 2
+vigilance_amazement = 0
+ecstasy_grief = 1
+admiration_loathing = 0
