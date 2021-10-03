@@ -39,7 +39,6 @@ mouse_filter = 2
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 max_value = 6.0
-step = 1.0
 value = 3.0
 percent_visible = false
 __meta__ = {
@@ -52,3 +51,5 @@ margin_top = 293.0
 margin_right = 1024.0
 margin_bottom = 307.0
 text = "right"
+
+[node name="value_tween" type="Tween" parent="."]

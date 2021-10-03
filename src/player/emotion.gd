@@ -67,3 +67,12 @@ func _get_right_value():
 
 func _get_colors():
 	return Colors.get_colors(scale)
+
+
+static func get_labels(s):
+	var keys = TYPES.keys()
+	var mapped_scale = SCALES_MAP[s]
+	return [
+		keys[mapped_scale[0]],
+		keys[mapped_scale[1]]
+	]

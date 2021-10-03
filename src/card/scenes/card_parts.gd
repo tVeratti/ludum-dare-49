@@ -57,7 +57,7 @@ func add_part_type(value, key):
 	
 	var type
 	if value == 0: return
-	elif value > 0: type = emotion[0]
+	elif value < 0: type = emotion[0]
 	else: type = emotion[1]
 	
 	parts.append([type, abs(value)])
