@@ -15,16 +15,19 @@ __meta__ = {
 [node name="title" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 14.0
+autowrap = true
 
 [node name="flavor" type="Label" parent="."]
 margin_top = 24.0
 margin_right = 1024.0
 margin_bottom = 38.0
+autowrap = true
 
 [node name="outcome" type="Label" parent="."]
 margin_top = 48.0
 margin_right = 1024.0
 margin_bottom = 62.0
+autowrap = true
 
 [node name="next" type="Button" parent="."]
 visible = false

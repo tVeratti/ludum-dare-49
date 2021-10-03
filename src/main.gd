@@ -8,6 +8,8 @@ extends Spatial
 #	Card flips over to reveal success or failure outcome
 #	Apply modifiers to emotion scales
 
+var ScenarioCard = preload("res://scenario/scenes/scenario_card.tscn")
+
 
 # Add all scenarios that can appear in a game through editor
 # From: /scenario/resources
@@ -19,6 +21,7 @@ var current_scenario:Scenario
 var player:Player
 
 onready var hand:Spatial = $hand
+onready var scenario_root:Spatial = $scenario
 
 
 func _ready():
@@ -45,6 +48,10 @@ func next_scenario():
 		# End of game
 		pass
 	else:
+		var scenario_card = ScenarioCard.instance()
+		scenario_card.scenario = current_scenario
+		scenario_card.target_offset = Vector3(1, 0, 0)
+		scenario_root.add_child(scenario_card)
 		Signals.emit_signal("scenario_ready", current_scenario)
 
 
@@ -77,7 +84,7 @@ func _on_card_selected(card:Card):
 	var outcome
 	for index in range(roll_ranges.size()):
 		var roll_range = roll_ranges[index]
-		if roll_result > roll_range[0] and roll_result < roll_range[1]:
+		if roll_result >= roll_range[0] and roll_result < roll_range[1]:
 			outcome = card.outcomes[index]
 			print("Outcome Roll: %s [%s - %s]" % [roll_result, roll_range[0], roll_range[1]])
 			break

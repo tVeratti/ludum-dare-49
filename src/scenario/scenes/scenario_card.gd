@@ -4,14 +4,16 @@ var scenario:Scenario
 
 
 func _ready():
-#	label.text = scenario.title
-	Signals.connect("scenario_ready", self, "_on_scenario_ready")
+	label.text = scenario.title
+	
+	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 
 
 func activate():
+	disable()
 	Signals.emit_signal("scenario_started", scenario)
 
 
-func _on_scenario_ready(new_scenario):
-	scenario = new_scenario
-	label.text = scenario.title
+func _on_scenario_requested():
+	queue_free()
+

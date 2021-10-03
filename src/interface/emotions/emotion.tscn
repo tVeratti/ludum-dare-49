@@ -20,18 +20,22 @@ __meta__ = {
 [node name="layout" type="HBoxContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+mouse_filter = 2
+alignment = 2
 
 [node name="left" type="Label" parent="layout"]
+margin_left = 866.0
 margin_top = 293.0
-margin_right = 21.0
+margin_right = 887.0
 margin_bottom = 307.0
 text = "left"
 
 [node name="progress" type="ProgressBar" parent="layout"]
-margin_left = 25.0
-margin_right = 125.0
+margin_left = 891.0
+margin_right = 991.0
 margin_bottom = 10.0
 rect_min_size = Vector2( 100, 10 )
+mouse_filter = 2
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 max_value = 6.0
@@ -43,8 +47,8 @@ __meta__ = {
 }
 
 [node name="right" type="Label" parent="layout"]
-margin_left = 129.0
+margin_left = 995.0
 margin_top = 293.0
-margin_right = 158.0
+margin_right = 1024.0
 margin_bottom = 307.0
 text = "right"

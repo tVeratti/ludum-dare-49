@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ld49_carddeal.wav-1003764f5ac69190e623e20d902947a6.sample"
+
+[deps]
+
+source_file="res://assets/audio/ld49_carddeal.wav"
+dest_files=[ "res://.import/ld49_carddeal.wav-1003764f5ac69190e623e20d902947a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

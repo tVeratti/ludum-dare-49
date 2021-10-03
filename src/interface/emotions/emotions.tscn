@@ -2,41 +2,51 @@
 
 [ext_resource path="res://interface/emotions/emotion.tscn" type="PackedScene" id=2]
 
-[node name="emotions" type="VBoxContainer"]
+[node name="emotions" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 10
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="rage_terror" parent="." instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="emotions" type="VBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 14.0
+margin_bottom = 600.0
+mouse_filter = 2
+custom_constants/separation = 10
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="vigilance_amazement" parent="." instance=ExtResource( 2 )]
+[node name="rage_terror" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 24.0
+margin_top = 514.0
 margin_right = 1024.0
-margin_bottom = 38.0
+margin_bottom = 528.0
+
+[node name="vigilance_amazement" parent="emotions" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 538.0
+margin_right = 1024.0
+margin_bottom = 552.0
 scale = 1
 
-[node name="ecstasy_grief" parent="." instance=ExtResource( 2 )]
+[node name="ecstasy_grief" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 48.0
+margin_top = 562.0
 margin_right = 1024.0
-margin_bottom = 62.0
+margin_bottom = 576.0
 scale = 2
 
-[node name="admiration_loathing" parent="." instance=ExtResource( 2 )]
+[node name="admiration_loathing" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 72.0
+margin_top = 586.0
 margin_right = 1024.0
-margin_bottom = 86.0
-mouse_filter = 2
+margin_bottom = 600.0
 scale = 3

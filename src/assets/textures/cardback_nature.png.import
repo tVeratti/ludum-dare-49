@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/placeholder.png-9b2ffda4c9cbd36525f17a403af7e2e0.s3tc.stex"
-path.etc2="res://.import/placeholder.png-9b2ffda4c9cbd36525f17a403af7e2e0.etc2.stex"
+path.s3tc="res://.import/cardback_nature.png-401f2dbbb9e8917e9001676ea4c39618.s3tc.stex"
+path.etc2="res://.import/cardback_nature.png-401f2dbbb9e8917e9001676ea4c39618.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://card/placeholder.png"
-dest_files=[ "res://.import/placeholder.png-9b2ffda4c9cbd36525f17a403af7e2e0.s3tc.stex", "res://.import/placeholder.png-9b2ffda4c9cbd36525f17a403af7e2e0.etc2.stex" ]
+source_file="res://assets/textures/cardback_nature.png"
+dest_files=[ "res://.import/cardback_nature.png-401f2dbbb9e8917e9001676ea4c39618.s3tc.stex", "res://.import/cardback_nature.png-401f2dbbb9e8917e9001676ea4c39618.etc2.stex" ]
 
 [params]
 
@@ -22,8 +22,8 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=1
 process/fix_alpha_border=true

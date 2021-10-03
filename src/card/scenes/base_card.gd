@@ -8,22 +8,24 @@ var target_offset:Vector3 = Vector3.ZERO
 
 onready var camera:Camera = get_viewport().get_camera()
 
-onready var front_mesh:MeshInstance = $front_mesh
-onready var back_mesh:MeshInstance = $back_mesh
+onready var front_mesh:Sprite3D = $front_mesh
+onready var back_mesh:Sprite3D = $back_mesh
 onready var move_tween:Tween = $move_tween
 onready var look_tween:Tween = $look_tween
 onready var flip_audio:AudioStreamPlayer = $flip_audio
 onready var hover_audio:AudioStreamPlayer = $hover_audio
+onready var place_audio:AudioStreamPlayer = $place_audio
 onready var label = $label3D
 
 var disabled:bool = false
+var hovered:bool = false
 var target_origin:Vector3
 var target_hover:Vector3
 
+var positioned:bool = false
 
-func _ready():
-	# set mesh textures?
-	
+
+func _ready():	
 	# Snapshot some resting postional values.
 	target_origin = global_transform.origin + target_offset
 	var camera_direction = (camera.global_transform.origin - target_origin).normalized()
@@ -31,12 +33,29 @@ func _ready():
 	
 	# Move to its starting offset.
 	if target_offset.length() > 0:
-		move_tween.interpolate_property(self, "translation", translation, target_offset, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		move_tween.interpolate_property(self, "translation", translation, target_offset, 0.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		move_tween.start()
+		
+		yield(get_tree().create_timer(0.3), "timeout")
+		var pitch_mod = rand_range(-0.1, 0.1)
+		place_audio.pitch_scale = 1 + pitch_mod
+		place_audio.play()
+
+
+func set_card_back(texture:Texture):
+	back_mesh.texture = texture
+
+
+func set_card_front(material:SpatialMaterial):
+	pass
 
 
 func disable():
 	disabled = true
+
+
+func enable():
+	disabled = false
 
 
 func flip():
@@ -48,8 +67,9 @@ func flip():
 func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
 	if not disabled:
 		if event is InputEventMouseMotion:
-			var look_offset = click_position - Vector3(0, 0, 20)
-			look_at(look_offset, Vector3.UP)
+#			var look_offset = click_position - Vector3(0, 0, 10)
+#			look_at(look_offset, Vector3.UP)
+			if not hovered: tween_origin(target_hover)
 		elif event is InputEventMouseButton and event.pressed:
 			flip()
 			activate()
@@ -63,13 +83,10 @@ func hover():
 	pass # overwrite by action or scenario
 
 
-func get_size():
-	return front_mesh.get_aabb().size
-
-
 func tween_origin(target):
-	move_tween.interpolate_property(self, "global_transform:origin", global_transform.origin, target, 0.2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	move_tween.start()
+	if positioned:
+		move_tween.interpolate_property(self, "global_transform:origin", global_transform.origin, target, 0.2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		move_tween.start()
 
 
 func tween_look(target):
@@ -79,8 +96,10 @@ func tween_look(target):
 
 func _on_Area_mouse_entered():
 	if not disabled:
+		hovered = true
 		hover()
 		tween_origin(target_hover)
+		
 		# Modify the pitch just a TINY bit...
 		var pitch_mod = rand_range(-0.1, 0.1)
 		hover_audio.pitch_scale = 1 + pitch_mod
@@ -89,7 +108,10 @@ func _on_Area_mouse_entered():
 
 func _on_Area_mouse_exited():
 	if not disabled:
+		hovered = false
 		tween_look(Vector3.ZERO)
 		tween_origin(target_origin)
 
 
+func _on_move_tween_tween_all_completed():
+	positioned = true
