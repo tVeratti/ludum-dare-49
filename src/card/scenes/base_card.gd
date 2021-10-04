@@ -2,7 +2,8 @@ extends Spatial
 
 class_name BaseCard
 
-const HOVER_OFFSET = 0.2
+const HOVER_OFFSET = 0.1
+const HOVER_SCALE = Vector3(1.2, 1.2, 1)
 
 var target_offset:Vector3 = Vector3.ZERO
 
@@ -12,6 +13,7 @@ onready var front_mesh:Sprite3D = $display/front_mesh
 onready var back_mesh:Sprite3D = $display/back_mesh
 onready var move_tween:Tween = $move_tween
 onready var look_tween:Tween = $look_tween
+onready var scale_tween:Tween = $look_tween
 onready var flip_audio:AudioStreamPlayer = $flip_audio
 onready var hover_audio:AudioStreamPlayer = $hover_audio
 onready var place_audio:AudioStreamPlayer = $place_audio
@@ -63,7 +65,8 @@ func enable():
 
 func flip():
 	tween_look(Vector3(0, 180, 0))
-	tween_origin(target_hover)
+	tween_scale(HOVER_SCALE)
+#	tween_origin(target_hover)
 	flip_audio.play()
 
 
@@ -72,7 +75,7 @@ func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx
 		if event is InputEventMouseMotion:
 #			var look_offset = click_position - Vector3(0, 0, 10)
 #			look_at(look_offset, Vector3.UP)
-			if not hovered: tween_origin(target_hover)
+			if not hovered: tween_scale(HOVER_SCALE)
 		elif event is InputEventMouseButton and event.pressed:
 			flip()
 			activate()
@@ -87,9 +90,16 @@ func hover():
 
 
 func tween_origin(target):
-	if positioned:
-		move_tween.interpolate_property(self, "global_transform:origin", global_transform.origin, target, 0.2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-		move_tween.start()
+	pass
+#	move_tween.interpolate_property(self, "global_transform:origin", global_transform.origin, target, 0.2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+#	move_tween.start()
+#	
+
+
+func tween_scale(target):
+	scale_tween.interpolate_property(self, "scale", scale, target, 0.2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	scale_tween.start()
+
 
 
 func tween_look(target):
@@ -101,7 +111,8 @@ func _on_Area_mouse_entered():
 	if not disabled:
 		hovered = true
 		hover()
-		tween_origin(target_hover)
+		tween_scale(HOVER_SCALE)
+#		tween_origin(target_hover)
 		
 		# Modify the pitch just a TINY bit...
 		var pitch_mod = rand_range(-0.1, 0.1)
@@ -113,8 +124,9 @@ func _on_Area_mouse_exited():
 	if not disabled:
 		hovered = false
 		Signals.emit_signal("card_unhovered")
+		tween_scale(Vector3.ONE)
 		tween_look(Vector3.ZERO)
-		tween_origin(target_origin)
+#		tween_origin(target_origin)
 
 
 func _on_move_tween_tween_all_completed():
