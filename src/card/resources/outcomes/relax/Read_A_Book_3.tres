@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Don't go digital!"
+flavor_text = "You thought bringing your eReader would be cool, but you totally forgot to charge it. It's dead."
+modifier_type = 7
+rage_terror = 1
+vigilance_amazement = 0
+ecstasy_grief = 0
+admiration_loathing = 2
