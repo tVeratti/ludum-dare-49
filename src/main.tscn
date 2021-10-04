@@ -30,13 +30,13 @@
 [ext_resource path="res://assets/textures/firelight3.png" type="Texture" id=28]
 [ext_resource path="res://title.tscn" type="PackedScene" id=29]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=10]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=11]
 flags_unshaded = true
 albedo_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 27 ) ],
 "loop": true,
@@ -74,7 +74,7 @@ flags = 16
 atlas = ExtResource( 23 )
 region = Rect2( 240, 0, 48, 48 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
@@ -82,15 +82,14 @@ animations = [ {
 "speed": 9.5
 } ]
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=14]
 params_blend_mode = 3
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.08
 albedo_color = Color( 0.801, 0.8307, 0.9, 1 )
 albedo_texture = ExtResource( 16 )
-uv1_scale = Vector3( 1, 1.5, 1 )
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=15]
 script/source = "extends Sprite3D
 
 export var offset_speed:float = .1
@@ -116,14 +115,14 @@ func _ready():
 
 "
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=16]
 flags_unshaded = true
 params_depth_draw_mode = 3
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.33
 albedo_texture = ExtResource( 13 )
 
-[sub_resource type="GDScript" id=14]
+[sub_resource type="GDScript" id=17]
 script/source = "extends MeshInstance
 
 export var offset_speed:float = .1
@@ -149,11 +148,11 @@ func _ready():
 
 "
 
-[sub_resource type="SpatialMaterial" id=15]
+[sub_resource type="SpatialMaterial" id=18]
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 metallic = 0.5
 
-[sub_resource type="ArrayMesh" id=16]
+[sub_resource type="ArrayMesh" id=19]
 surfaces/0 = {
 "aabb": AABB( 0, -1.6, -6.4, 1e-05, 3.2, 12.8 ),
 "array_data": PoolByteArray( 0, 0, 0, 0, 154, 152, 180, 191, 62, 63, 228, 62, 127, 0, 0, 0, 0, 250, 126, 129, 72, 56, 5, 60, 0, 0, 0, 0, 205, 204, 204, 63, 189, 198, 50, 63, 127, 0, 0, 0, 0, 242, 126, 129, 112, 56, 247, 154, 0, 0, 0, 0, 42, 200, 165, 191, 204, 155, 195, 191, 127, 0, 0, 0, 0, 252, 126, 129, 17, 54, 5, 60, 0, 0, 0, 0, 205, 204, 204, 63, 217, 147, 72, 191, 127, 0, 0, 0, 0, 4, 126, 129, 2, 55, 247, 154, 0, 0, 0, 0, 105, 167, 154, 191, 62, 120, 35, 192, 127, 0, 0, 0, 0, 255, 126, 129, 197, 52, 5, 60, 0, 0, 0, 0, 82, 127, 185, 63, 90, 74, 31, 192, 127, 0, 0, 0, 0, 8, 126, 129, 218, 52, 247, 154, 0, 0, 0, 0, 141, 182, 158, 191, 126, 224, 79, 192, 127, 0, 0, 0, 0, 13, 126, 129, 201, 51, 5, 60, 0, 0, 0, 0, 187, 236, 175, 63, 190, 216, 87, 192, 127, 0, 0, 0, 0, 249, 126, 129, 121, 51, 247, 154, 0, 0, 0, 0, 97, 108, 185, 191, 179, 183, 130, 192, 127, 0, 0, 0, 0, 18, 125, 129, 172, 49, 5, 60, 0, 0, 0, 0, 113, 90, 198, 63, 183, 138, 139, 192, 127, 0, 0, 0, 0, 248, 126, 129, 250, 48, 247, 154, 0, 0, 0, 0, 213, 204, 204, 191, 86, 83, 188, 192, 127, 0, 0, 0, 0, 1, 126, 129, 126, 40, 5, 60, 0, 0, 0, 0, 196, 204, 204, 63, 29, 2, 168, 192, 127, 0, 0, 0, 0, 5, 126, 129, 116, 45, 247, 154, 0, 0, 0, 0, 235, 110, 188, 63, 205, 204, 204, 192, 127, 0, 0, 0, 0, 11, 126, 129, 175, 157, 247, 154, 0, 0, 0, 0, 38, 140, 198, 191, 205, 204, 204, 192, 127, 0, 0, 0, 0, 245, 126, 129, 175, 157, 5, 60, 0, 0, 0, 0, 44, 156, 166, 63, 20, 175, 3, 64, 127, 0, 0, 0, 0, 247, 126, 129, 76, 57, 247, 154, 0, 0, 0, 0, 53, 127, 176, 191, 251, 119, 195, 63, 127, 0, 0, 0, 0, 3, 126, 129, 246, 56, 5, 60, 0, 0, 0, 0, 86, 241, 168, 63, 49, 153, 111, 64, 127, 0, 0, 0, 0, 4, 126, 129, 93, 58, 247, 154, 0, 0, 0, 0, 138, 231, 162, 191, 109, 26, 128, 64, 127, 0, 0, 0, 0, 1, 126, 129, 135, 58, 5, 60, 0, 0, 0, 0, 76, 25, 194, 63, 205, 204, 204, 64, 127, 0, 0, 0, 0, 4, 126, 129, 5, 60, 247, 154, 0, 0, 0, 0, 139, 80, 166, 191, 117, 142, 188, 64, 127, 0, 0, 0, 0, 245, 126, 129, 185, 59, 5, 60, 0, 0, 0, 0, 156, 25, 181, 191, 205, 204, 204, 64, 127, 0, 0, 0, 0, 228, 123, 129, 5, 60, 5, 60 ),
@@ -161,31 +160,47 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 57,
-"material": SubResource( 15 ),
+"material": SubResource( 18 ),
 "name": "Material",
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 21
 }
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="SpatialMaterial" id=20]
 flags_unshaded = true
 params_depth_draw_mode = 3
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 1.0
 albedo_texture = ExtResource( 15 )
 
-[sub_resource type="GDScript" id=18]
+[sub_resource type="GDScript" id=21]
 script/source = "extends MeshInstance
 
 export var offset_speed:float = .1
+var _t = 0
+export var sin_amplitude = .1
+export var sin_frequency = .1
+var _period: float
 
 func _process(delta):
 	var mat = self.get_surface_material(0)
 	mat.uv1_offset.x -= offset_speed * delta
+
+	var offset = cos(2 * PI * _t * sin_frequency)
+	mat.uv1_offset.y = offset * sin_amplitude
+	
+	_t += delta
+	_t = fmod(_t, _period)
+	
+func _ready():
+	_t = 0
+	_period = 1 / sin_frequency
+
+
 "
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=22]
 length = 60.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("river:translation")
@@ -200,7 +215,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 3.8, 0, 0 ) ]
 }
 
-[sub_resource type="Environment" id=20]
+[sub_resource type="Environment" id=23]
 background_mode = 1
 background_color = Color( 0.85098, 0.968627, 1, 1 )
 ambient_light_color = Color( 0.454902, 0.454902, 0.454902, 1 )
@@ -213,8 +228,8 @@ scenarios = [ ExtResource( 2 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 0, -1.36461 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+mesh = SubResource( 10 )
+material/0 = SubResource( 11 )
 
 [node name="hammock" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.367, 1.188, 0.135 )
@@ -241,14 +256,15 @@ texture = ExtResource( 24 )
 [node name="fireglow" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.657354, -0.0187214 )
 modulate = Color( 1, 1, 1, 0.282353 )
-frames = SubResource( 3 )
+frames = SubResource( 12 )
 animation = "New Anim"
-frame = 3
+frame = 2
 playing = true
 
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
-frames = SubResource( 10 )
+frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]
@@ -262,11 +278,11 @@ texture = ExtResource( 9 )
 
 [node name="bg_sprite4" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.102316 )
-material_override = SubResource( 11 )
+material_override = SubResource( 14 )
 cast_shadow = 0
 alpha_cut = 2
 texture = ExtResource( 16 )
-script = SubResource( 12 )
+script = SubResource( 15 )
 offset_speed = 0.008
 sin_frequency = 0.016
 
@@ -295,21 +311,21 @@ texture = ExtResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="river_sprite"]
 transform = Transform( 7.54979e-08, 0, -0.503, 0, 0.58, 0, 1, 0, 3.79754e-08, -2.09548e-08, -0.0236414, 0.0641588 )
-visible = false
 mesh = ExtResource( 8 )
-material/0 = SubResource( 13 )
-script = SubResource( 14 )
+material/0 = SubResource( 16 )
+script = SubResource( 17 )
 offset_speed = -0.04
-sin_amplitude = 0.06
+sin_amplitude = 0.03
 sin_frequency = 0.06
 
 [node name="MeshInstance2" type="MeshInstance" parent="river_sprite"]
 transform = Transform( 7.54979e-08, 0, -0.503, 0, 0.58, 0, 1, 0, 3.79754e-08, -2.09548e-08, -0.0236414, 0.0177194 )
-visible = false
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
-script = SubResource( 18 )
-offset_speed = -0.01
+mesh = SubResource( 19 )
+material/0 = SubResource( 20 )
+script = SubResource( 21 )
+offset_speed = -0.025
+sin_amplitude = -0.04
+sin_frequency = -0.04
 
 [node name="scenario" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31639, -0.155992, -0.626891 )
@@ -318,7 +334,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31639, -0.155992, -0.626891
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1025, 0, 0 )
 
 [node name="river_animations" type="AnimationPlayer" parent="scenario"]
-anims/move = SubResource( 19 )
+anims/move = SubResource( 22 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.683 )
@@ -338,7 +354,7 @@ transform = Transform( 0.996651, 0.0615644, 0.0538131, -0.063181, 0.997584, 0.02
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 20 )
+environment = SubResource( 23 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
