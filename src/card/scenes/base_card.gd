@@ -2,7 +2,7 @@ extends Spatial
 
 class_name BaseCard
 
-const HOVER_OFFSET = 0.8
+const HOVER_OFFSET = 0.2
 
 var target_offset:Vector3 = Vector3.ZERO
 
