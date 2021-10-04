@@ -34,7 +34,6 @@ cast_shadow = 0
 generate_lightmap = false
 flip_h = true
 flip_v = true
-shaded = true
 alpha_cut = 2
 texture = SubResource( 1 )
 
