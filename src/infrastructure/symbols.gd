@@ -11,6 +11,7 @@ const FaceTerror = preload("res://assets/textures/face_fear_3.png")
 const FaceHappy = preload("res://assets/textures/face_sad_1.png")
 const FaceSad2 = preload("res://assets/textures/face_sad_2.png")
 const FaceSad3 = preload("res://assets/textures/face_sad_3.png")
+const FaceAmaze = preload("res://assets/textures/pog.png")
 
 
 static func get_symbol(type:int):
@@ -18,7 +19,7 @@ static func get_symbol(type:int):
 		EmotionScale.TYPES.RAGE: return FaceRage
 		EmotionScale.TYPES.TERROR: return FaceTerror
 		EmotionScale.TYPES.VIGILANCE: return FaceConfidence
-		EmotionScale.TYPES.AMAZEMENT: return FaceSad2
+		EmotionScale.TYPES.AMAZEMENT: return FaceAmaze
 		EmotionScale.TYPES.ECSTASY: return FaceHappy
 		EmotionScale.TYPES.GRIEF: return FaceSad3
 		EmotionScale.TYPES.ADMIRATION: return FaceAdmiration

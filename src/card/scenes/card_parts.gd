@@ -9,6 +9,8 @@ var TopThird = preload("res://assets/textures/cardfront_3_1.png")
 var MidThird = preload("res://assets/textures/cardfront_3_2.png")
 var BottomThird = preload("res://assets/textures/cardfront_3_3.png")
 
+var SmolFont = preload("res://assets/fonts/smol.tres")
+
 onready var layout:VBoxContainer = $layout
 
 
@@ -21,6 +23,8 @@ func _ready():
 
 func render_parts():
 	parts = Outcome.get_parts(outcome)
+	for part in layout.get_children():
+		part.queue_free()
 	
 	var backgrounds = []
 	match(parts.size()):
@@ -29,7 +33,7 @@ func render_parts():
 		3: backgrounds = [TopThird, MidThird, BottomThird]
 	
 	for part in parts:
-		var type = part[0]
+		var type = part.type_key
 		var container = CenterContainer.new()
 		
 		var bg = TextureRect.new()
@@ -37,13 +41,19 @@ func render_parts():
 		bg.modulate = Colors.COLOR_MAP[type]
 		container.add_child(bg)
 		
+		var hbox = HBoxContainer.new()
+		container.add_child(hbox)
+		
 		var facey = TextureRect.new()
 		facey.texture = Symbols.get_symbol(type)
-		container.add_child(facey)
+		hbox.add_child(facey)
 		
-#		var label = Label.new()
-#		label.text = "%s" %  part[1]
-#		container.add_child(label)
+		var label = Label.new()
+		label.set("custom_fonts/font", SmolFont)
+		label.set("custom_colors/font_color", Color.black)
+		var mod = "+" if part.delta > 0 else "-"
+		label.text = "%s%s" % [mod, abs(part.delta)]
+		hbox.add_child(label)
 		
 		layout.add_child(container)
 

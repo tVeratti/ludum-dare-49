@@ -2,6 +2,7 @@ extends Resource
 
 class_name Outcome
 
+
 # An Outcome is triggered when the player selects a card during a scenario.
 # Outcomes are assigned to either a success or fail state, and their modifiers are then applied.
 
@@ -29,6 +30,14 @@ static func get_parts(outcome):
 	_get_change(outcome.ecstasy_grief, EmotionScale.SCALES.ECSTASY_GRIEF, parts)
 	_get_change(outcome.admiration_loathing, EmotionScale.SCALES.ADMIRATION_LOATHING, parts)
 	
+	return parts
+
+
+static func get_relative_parts(outcome, player):
+	var parts = get_parts(outcome)
+	for part in parts:
+		part.relative_increase = player.get_emotion_raw(part.type_key) > player.get_emotion_raw(part.opposite_type_key)
+
 	return parts
 
 

@@ -7,34 +7,47 @@ onready var flavor = $layout/flavor
 onready var outcome_title = $layout/outcome_title
 onready var outcome_flavor = $layout/outcome_flavor
 onready var emotion_changes = $layout/emotion_changes
+onready var next = $layout/press_any
 
-onready var next:Button = $layout/next
+var ready_for_next:bool = false
 
 const EMOTION_ADJ_MAP = {
-	EmotionScale.TYPES.RAGE: "more angry",
-	EmotionScale.TYPES.TERROR: "more afraid",
-	EmotionScale.TYPES.VIGILANCE: "more vigilant",
-	EmotionScale.TYPES.AMAZEMENT: "more amazed",
-	EmotionScale.TYPES.ECSTASY: "happier",
-	EmotionScale.TYPES.GRIEF: "more sad",
-	EmotionScale.TYPES.ADMIRATION: "more in awe",
-	EmotionScale.TYPES.LOATHING: "more frustrated",
+	EmotionScale.TYPES.RAGE: "angry",
+	EmotionScale.TYPES.TERROR: "afraid",
+	EmotionScale.TYPES.VIGILANCE: "vigilant",
+	EmotionScale.TYPES.AMAZEMENT: "amazed",
+	EmotionScale.TYPES.ECSTASY: "happy",
+	EmotionScale.TYPES.GRIEF: "sad",
+	EmotionScale.TYPES.ADMIRATION: "awe",
+	EmotionScale.TYPES.LOATHING: "frustrated",
 }
 
 
 func _ready():
+	next.visible = false
+	
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 	Signals.connect("scenario_ready", self, "_on_scenario_ready")
 	Signals.connect("scenario_started", self, "_on_scenario_started")
 	Signals.connect("outcome_triggered", self, "_on_outcome_triggered")
 
 
+func _input(event):
+	if ready_for_next and (event is InputEventKey or event is InputEventMouseButton):
+		if event.pressed:
+			Signals.emit_signal("scenario_requested")
+
+
 func _on_scenario_requested():
+	ready_for_next = false
+	
 	# Clear out the previous scenario
 	title.label = ""
 	flavor.label = ""
 	outcome_title.label = ""
 	outcome_flavor.label = ""
+	next.visible = false
+	
 	for label in emotion_changes.get_children():
 		label.queue_free()
 
@@ -50,23 +63,26 @@ func _on_scenario_started(scenario:Scenario):
 	flavor.label = scenario.flavor_text
 
 
-func _on_outcome_triggered(_outcome:Outcome):
+func _on_outcome_triggered(_outcome:Outcome, player:Player):
 	toggle_scenario(false)
 	toggle_outcome(true)
 	
 	outcome_title.label = _outcome.title
 	outcome_flavor.label = _outcome.flavor_text
+	next.visible = true
 	
 	# Get emotional outcome parts
-	var parts = Outcome.get_parts(_outcome)
+	var parts = Outcome.get_relative_parts(_outcome, player)
 	for part in parts:
 		var label = TextScene.instance()
 		emotion_changes.add_child(label)
-		label.modulate = part[3]
-		label.label = "   You feel %s." % EMOTION_ADJ_MAP[part[0]]
+		var mod = "more" if part.relative_increase else "less"
+		var color = Colors.COLOR_MAP[part.type_key] if part.relative_increase else Colors.COLOR_MAP[part.opposite_type_key]
+		var text = EMOTION_ADJ_MAP[part.type_key] if part.relative_increase else EMOTION_ADJ_MAP[part.opposite_type_key]
+		label.modulate = color
+		label.label = "   You feel %s %s." % [mod, text]
 	
-	next.visible = true
-	next.disabled = false
+	ready_for_next = true
 
 
 func toggle_scenario(value):
@@ -77,9 +93,3 @@ func toggle_scenario(value):
 func toggle_outcome(value):
 	outcome_title.visible = value
 	outcome_flavor.visible = value
-
-
-func _on_next_pressed():
-	Signals.emit_signal("scenario_requested")
-	next.visible = false
-	next.disabled = true
