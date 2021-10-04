@@ -16,5 +16,5 @@ __meta__ = {
 [node name="flavor" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 32.0
-margin_bottom = 14.0
+margin_right = 1.0
+margin_bottom = 12.0

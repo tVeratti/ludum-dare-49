@@ -85,7 +85,7 @@ animations = [ {
 params_blend_mode = 3
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.08
-albedo_color = Color( 0.662745, 0.709804, 0.819608, 1 )
+albedo_color = Color( 0.801, 0.8307, 0.9, 1 )
 albedo_texture = ExtResource( 16 )
 uv1_scale = Vector3( 1, 1.5, 1 )
 
@@ -242,13 +242,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.657354, -0.0187214 
 modulate = Color( 1, 1, 1, 0.282353 )
 frames = SubResource( 3 )
 animation = "New Anim"
-frame = 1
+frame = 2
 playing = true
 
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
 frames = SubResource( 10 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]
@@ -294,7 +294,7 @@ alpha_cut = 2
 texture = ExtResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="river_sprite"]
-transform = Transform( 7.54979e-08, 0, -0.503, 0, 0.58, 0, 1, 0, 3.79754e-08, -2.09548e-08, -0.0236414, 0.0424545 )
+transform = Transform( 7.54979e-08, 0, -0.503, 0, 0.58, 0, 1, 0, 3.79754e-08, -2.09548e-08, -0.0236414, 0.0641588 )
 mesh = ExtResource( 8 )
 material/0 = SubResource( 14 )
 script = SubResource( 15 )
@@ -303,7 +303,7 @@ sin_amplitude = 0.06
 sin_frequency = 0.06
 
 [node name="MeshInstance2" type="MeshInstance" parent="river_sprite"]
-transform = Transform( 7.54979e-08, 0, -0.503, 0, 0.58, 0, 1, 0, 3.79754e-08, -2.09548e-08, -0.0236414, 0.0612637 )
+transform = Transform( 7.54979e-08, 0, -0.503, 0, 0.58, 0, 1, 0, 3.79754e-08, -2.09548e-08, -0.0236414, 0.0177194 )
 mesh = SubResource( 17 )
 material/0 = SubResource( 18 )
 script = SubResource( 19 )
