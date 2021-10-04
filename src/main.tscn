@@ -1,17 +1,16 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/Make_Camp_2.tres" type="Resource" id=2]
 [ext_resource path="res://interface/interface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/audio/ld49_music2.ogg" type="AudioStream" id=4]
 [ext_resource path="res://card/scenes/hand.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/textures/river.png" type="Texture" id=6]
 [ext_resource path="res://scenario/resources/Find_your_way_1.tres" type="Resource" id=7]
-[ext_resource path="res://interface/text.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=9]
 [ext_resource path="res://assets/textures/background_2.png" type="Texture" id=10]
 [ext_resource path="res://assets/textures/shadows.png" type="Texture" id=11]
 [ext_resource path="res://scenario/resources/Go_Hike_3.tres" type="Resource" id=12]
-[ext_resource path="res://assets/audio/ld49_music1.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/audio/ld49_ambientloop.ogg" type="AudioStream" id=14]
 
 [sub_resource type="CubeMesh" id=1]
@@ -53,7 +52,7 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="hand" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54653, -1.30244, -0.531034 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54653, -1.11423, -0.531034 )
 
 [node name="bg_sprite" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.264, -0.858 )
@@ -94,13 +93,6 @@ size = 3.6
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="card_flavor" parent="CanvasLayer" instance=ExtResource( 8 )]
-visible = true
-margin_left = 95.2806
-margin_top = 383.056
-margin_right = 1059.28
-margin_bottom = 383.056
-
 [node name="interface" parent="CanvasLayer" instance=ExtResource( 3 )]
 mouse_filter = 2
 
@@ -112,7 +104,7 @@ shadow_enabled = true
 environment = SubResource( 4 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 4 )
 autoplay = true
 
 [node name="ambiance" type="AudioStreamPlayer" parent="."]

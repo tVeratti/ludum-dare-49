@@ -35,35 +35,33 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 104.0
 margin_right = 1240.0
-margin_bottom = 118.0
+margin_bottom = 116.0
 
 [node name="flavor" parent="layout" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 122.0
+margin_top = 120.0
 margin_right = 1240.0
-margin_bottom = 136.0
-
-[node name="spring2" type="Control" parent="layout"]
-margin_top = 140.0
-margin_right = 1240.0
-margin_bottom = 180.0
-rect_min_size = Vector2( 0, 40 )
-mouse_filter = 2
+margin_bottom = 132.0
 
 [node name="outcome_title" parent="layout" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 184.0
+margin_top = 136.0
 margin_right = 1240.0
-margin_bottom = 198.0
+margin_bottom = 148.0
 
 [node name="outcome_flavor" parent="layout" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 202.0
+margin_top = 152.0
 margin_right = 1240.0
-margin_bottom = 216.0
+margin_bottom = 164.0
+
+[node name="emotion_changes" type="VBoxContainer" parent="layout"]
+margin_top = 168.0
+margin_right = 1240.0
+margin_bottom = 168.0
 
 [node name="next" type="Button" parent="layout"]
 visible = false
