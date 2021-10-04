@@ -112,7 +112,7 @@ func _on_Area_mouse_entered():
 		hovered = true
 		hover()
 		tween_scale(HOVER_SCALE)
-#		tween_origin(target_hover)
+		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 		
 		# Modify the pitch just a TINY bit...
 		var pitch_mod = rand_range(-0.1, 0.1)
@@ -121,12 +121,12 @@ func _on_Area_mouse_entered():
 
 
 func _on_Area_mouse_exited():
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	if not disabled:
 		hovered = false
 		Signals.emit_signal("card_unhovered")
 		tween_scale(Vector3.ONE)
 		tween_look(Vector3.ZERO)
-#		tween_origin(target_origin)
 
 
 func _on_move_tween_tween_all_completed():

@@ -6,6 +6,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+size_flags_horizontal = 0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
@@ -15,12 +16,14 @@ __meta__ = {
 }
 
 [node name="emotions" type="VBoxContainer" parent="."]
-margin_left = 20.0
-margin_top = 20.0
+margin_left = 1142.0
+margin_top = 605.0
 margin_right = 1260.0
 margin_bottom = 700.0
 mouse_filter = 2
-custom_constants/separation = 10
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_constants/separation = 5
 alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,30 +32,29 @@ __meta__ = {
 [node name="rage_terror" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 610.0
-margin_right = 1240.0
-margin_bottom = 620.0
+margin_right = 118.0
+margin_bottom = 20.0
 
 [node name="vigilance_amazement" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 630.0
-margin_right = 1240.0
-margin_bottom = 640.0
+margin_top = 25.0
+margin_right = 118.0
+margin_bottom = 45.0
 scale = 1
 
 [node name="ecstasy_grief" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 650.0
-margin_right = 1240.0
-margin_bottom = 660.0
+margin_top = 50.0
+margin_right = 118.0
+margin_bottom = 70.0
 scale = 2
 
 [node name="admiration_loathing" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 670.0
-margin_right = 1240.0
-margin_bottom = 680.0
+margin_top = 75.0
+margin_right = 118.0
+margin_bottom = 95.0
 scale = 3

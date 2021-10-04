@@ -20,6 +20,23 @@ export(int) var ecstasy_grief:int = 0
 export(int) var admiration_loathing:int = 0
 
 
+static func get_parts(outcome):
+	var parts = []
+	
+	# Get all possible part values from the outcome
+	_get_change(outcome.rage_terror, EmotionScale.SCALES.RAGE_TERROR, parts)
+	_get_change(outcome.vigilance_amazement, EmotionScale.SCALES.VIGILANCE_AMAZEMENT, parts)
+	_get_change(outcome.ecstasy_grief, EmotionScale.SCALES.ECSTASY_GRIEF, parts)
+	_get_change(outcome.admiration_loathing, EmotionScale.SCALES.ADMIRATION_LOATHING, parts)
+	
+	return parts
+
+
+static func _get_change(delta, key, parts):
+	if delta != 0:
+		parts.append(EmotionScale.get_change_info(delta, key))
+	
+
 func get_modifier(scale:int) -> int:
 	match(scale):
 		EmotionScale.SCALES.RAGE_TERROR: return rage_terror

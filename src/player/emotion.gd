@@ -69,6 +69,28 @@ func _get_colors():
 	return Colors.get_colors(scale)
 
 
+static func get_change_info(delta, key):
+	var emotion = SCALES_MAP[key]
+	var labels = get_labels(key)
+	var colors = Colors.get_colors(key)
+	
+	var type
+	var label
+	var color
+	
+	if delta == 0: return
+	elif delta < 0:
+		type = emotion[0]
+		label = labels[0]
+		color = colors[0]
+	else:
+		type = emotion[1]
+		label = labels[1]
+		color = colors[1]
+	
+	return [type, abs(delta), label, color]
+
+
 static func get_labels(s):
 	var keys = TYPES.keys()
 	var mapped_scale = SCALES_MAP[s]

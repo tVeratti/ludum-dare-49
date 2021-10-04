@@ -20,13 +20,7 @@ func _ready():
 
 
 func render_parts():
-	parts = []
-	
-	# Get all possible part values from the outcome
-	add_part_type(outcome.rage_terror, EmotionScale.SCALES.RAGE_TERROR)
-	add_part_type(outcome.vigilance_amazement, EmotionScale.SCALES.VIGILANCE_AMAZEMENT)
-	add_part_type(outcome.ecstasy_grief, EmotionScale.SCALES.ECSTASY_GRIEF)
-	add_part_type(outcome.admiration_loathing, EmotionScale.SCALES.ADMIRATION_LOATHING)
+	parts = Outcome.get_parts(outcome)
 	
 	var backgrounds = []
 	match(parts.size()):
@@ -55,18 +49,5 @@ func render_parts():
 
 
 func add_part_type(value, key):
-	var emotion = EmotionScale.SCALES_MAP[key]
-	var labels = EmotionScale.get_labels(key)
-	
-	var type
-	var label
-	
-	if value == 0: return
-	elif value < 0:
-		type = emotion[0]
-		label = labels[0]
-	else:
-		type = emotion[1]
-		label = labels[1]
-	
-	parts.append([type, abs(value), label])
+	var part = EmotionScale.get_change_info(value, key)
+	parts.append(part)

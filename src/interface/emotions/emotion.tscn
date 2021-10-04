@@ -1,34 +1,90 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://interface/emotions/emotion.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/face_anger_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/face_anger_1.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.223529, 0.52549, 1, 1 )
+bg_color = Color( 1, 1, 1, 1 )
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.223529, 0.52549, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.839216, 0.576471, 0.298039, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "highlight"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("background:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.233258, 4, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
 
 [node name="emotion" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -1162.0
+margin_bottom = -700.0
 mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="layout" type="HBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="background" type="Panel" parent="."]
+margin_right = 136.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 68, 10 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="margin" type="MarginContainer" parent="."]
+margin_right = 136.0
+margin_bottom = 21.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="layout" type="HBoxContainer" parent="margin"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 131.0
+margin_bottom = 16.0
 mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 alignment = 2
 
-[node name="left_symbol" type="TextureRect" parent="layout"]
-margin_left = 916.0
-margin_right = 916.0
-margin_bottom = 600.0
+[node name="left_symbol" type="TextureRect" parent="margin/layout"]
+margin_right = 9.0
+margin_bottom = 11.0
+texture = ExtResource( 3 )
 
-[node name="left" type="Label" parent="layout"]
+[node name="left" type="Label" parent="margin/layout"]
 visible = false
 margin_left = 866.0
 margin_top = 293.0
@@ -36,14 +92,14 @@ margin_right = 887.0
 margin_bottom = 307.0
 text = "left"
 
-[node name="progress" type="ProgressBar" parent="layout"]
-margin_left = 920.0
-margin_right = 1020.0
+[node name="progress" type="ProgressBar" parent="margin/layout"]
+margin_left = 13.0
+margin_right = 113.0
 margin_bottom = 10.0
 rect_min_size = Vector2( 100, 10 )
 mouse_filter = 2
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 min_value = -0.5
 max_value = 6.5
 value = 3.0
@@ -52,7 +108,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="right" type="Label" parent="layout"]
+[node name="right" type="Label" parent="margin/layout"]
 visible = false
 margin_left = 995.0
 margin_top = 293.0
@@ -60,9 +116,13 @@ margin_right = 1024.0
 margin_bottom = 307.0
 text = "right"
 
-[node name="right_symbol" type="TextureRect" parent="layout"]
-margin_left = 1024.0
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="right_symbol" type="TextureRect" parent="margin/layout"]
+margin_left = 117.0
+margin_right = 126.0
+margin_bottom = 11.0
+texture = ExtResource( 2 )
 
 [node name="value_tween" type="Tween" parent="."]
+
+[node name="animations" type="AnimationPlayer" parent="."]
+anims/highlight = SubResource( 4 )
