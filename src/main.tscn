@@ -89,7 +89,6 @@ params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.08
 albedo_color = Color( 0.801, 0.8307, 0.9, 1 )
 albedo_texture = ExtResource( 16 )
-uv1_scale = Vector3( 1, 1.5, 1 )
 
 [sub_resource type="GDScript" id=15]
 script/source = "extends Sprite3D
@@ -260,13 +259,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.657354, -0.0187214 
 modulate = Color( 1, 1, 1, 0.282353 )
 frames = SubResource( 12 )
 animation = "New Anim"
-frame = 3
+frame = 2
 playing = true
 
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
 frames = SubResource( 13 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]
