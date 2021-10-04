@@ -23,6 +23,8 @@ func _ready():
 
 func render_parts():
 	parts = Outcome.get_parts(outcome)
+	for part in layout.get_children():
+		part.queue_free()
 	
 	var backgrounds = []
 	match(parts.size()):

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 title = "Mud Surfer"
-flavor_text = "When you thought your feet would fail you, they did not. Instead of wiping out on the ground, you surfe effortlessly across the way."
+flavor_text = "When you thought your feet would fail you, they did not. Instead of wiping out on the ground, you surf effortlessly across the way."
 modifier_type = 0
 rage_terror = 0
 vigilance_amazement = -2

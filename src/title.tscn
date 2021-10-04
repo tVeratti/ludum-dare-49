@@ -20,7 +20,7 @@ __meta__ = {
 margin_left = 50.0
 margin_top = 150.0
 margin_right = 1080.0
-margin_bottom = 230.0
+margin_bottom = 214.0
 
 [node name="text" parent="main" instance=ExtResource( 1 )]
 anchor_right = 0.0
@@ -46,8 +46,8 @@ speed = 0.8
 visible = false
 margin_left = 50.0
 margin_top = 150.0
-margin_right = 450.0
-margin_bottom = 230.0
+margin_right = 1080.0
+margin_bottom = 228.0
 custom_constants/separation = 10
 
 [node name="one" parent="story" instance=ExtResource( 2 )]
@@ -77,7 +77,7 @@ anchor_bottom = 0.0
 margin_top = 32.0
 margin_right = 1130.0
 margin_bottom = 44.0
-label = "With a little luck, maybe you can get some emotional clarity and balance before you have to return to your life."
+label = "With a little luck, maybe you can get some emotional balance before you have to return to your life."
 delay = 7.0
 speed = 0.5
 auto_play = false
