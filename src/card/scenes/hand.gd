@@ -9,12 +9,14 @@ onready var cards:Spatial = $cards
 
 
 func _ready():
+	visible = false
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 	Signals.connect("scenario_started", self, "_on_scenario_started")
 	Signals.connect("card_selected", self, "_on_card_selected")
 
 
 func render_cards(scenario:Scenario):
+	visible = true
 	# Create new card nodes for new scenario.
 	var index = 1
 	for card in scenario.cards:
