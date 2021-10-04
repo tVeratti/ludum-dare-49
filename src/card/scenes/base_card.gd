@@ -65,7 +65,7 @@ func enable():
 
 func flip():
 	tween_look(Vector3(0, 180, 0))
-	tween_scale(HOVER_SCALE)
+	tween_scale(Vector3.ONE)
 #	tween_origin(target_hover)
 	flip_audio.play()
 

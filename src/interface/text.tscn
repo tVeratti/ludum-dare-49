@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://interface/text.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/regular.tres" type="DynamicFont" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -29,8 +30,9 @@ tracks/1/keys = {
 "values": [ Vector2( -10, 0 ), Vector2( 0, 0 ) ]
 }
 
-[node name="text" type="Control"]
-visible = false
+[node name="text" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
@@ -38,11 +40,12 @@ __meta__ = {
 }
 
 [node name="label" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 54.0
-margin_bottom = 14.0
+margin_top = 352.0
+margin_right = 1280.0
+margin_bottom = 368.0
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

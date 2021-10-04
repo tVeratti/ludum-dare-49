@@ -2,10 +2,11 @@ extends Control
 
 
 
-onready var title:Label = $title
-onready var flavor:Label = $flavor
-onready var outcome:Label = $outcome
-onready var next:Button = $next
+onready var title = $layout/title
+onready var flavor = $layout/flavor
+onready var outcome_title = $layout/outcome_title
+onready var outcome_flavor = $layout/outcome_flavor
+onready var next:Button = $layout/next
 
 
 func _ready():
@@ -17,9 +18,10 @@ func _ready():
 
 func _on_scenario_requested():
 	# Clear out the previous scenario
-	title.text = ""
-	flavor.text = ""
-	outcome.text = ""
+	title.label = ""
+	flavor.label = ""
+	outcome_title.label = ""
+	outcome_flavor.label = ""
 
 
 func _on_scenario_ready(scenario):
@@ -27,12 +29,14 @@ func _on_scenario_ready(scenario):
 
 
 func _on_scenario_started(scenario:Scenario):
-	title.text = scenario.title
-	flavor.text = scenario.flavor_text
+	title.label = scenario.title
+	yield(get_tree().create_timer(0.3), "timeout")
+	flavor.label = scenario.flavor_text
 
 
 func _on_outcome_triggered(_outcome:Outcome):
-	outcome.text = "%s\n%s" % [_outcome.title, _outcome.flavor_text]	
+	outcome_title.label = _outcome.title
+	outcome_flavor.label = _outcome.flavor_text
 	next.visible = true
 	next.disabled = false
 
