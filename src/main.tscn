@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/Make_Camp_2.tres" type="Resource" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=9]
 [ext_resource path="res://assets/textures/background_2.png" type="Texture" id=10]
 [ext_resource path="res://assets/textures/shadows.png" type="Texture" id=11]
+[ext_resource path="res://scenario/resources/Go_Hike_3.tres" type="Resource" id=12]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -43,7 +44,7 @@ tonemap_mode = 2
 
 [node name="main" type="Spatial"]
 script = ExtResource( 1 )
-scenarios = [ ExtResource( 7 ), ExtResource( 2 ) ]
+scenarios = [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 12 ) ]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 0, -1.36461 )

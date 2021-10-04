@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Snap"
+flavor_text = "You find a great looking walking stick and bend it a bit. It seems durable enough. You start using it, and as soon as you do, it snaps in half. "
+modifier_type = 7
+rage_terror = 0
+vigilance_amazement = 1
+ecstasy_grief = 0
+admiration_loathing = 2

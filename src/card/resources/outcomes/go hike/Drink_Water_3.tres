@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Dying"
+flavor_text = "You take the bottl from your pack and realize it's half empty. You didn't fill it before you left."
+modifier_type = 5
+rage_terror = 0
+vigilance_amazement = 0
+ecstasy_grief = 2
+admiration_loathing = -1
