@@ -33,6 +33,7 @@ var right:int setget , _get_right_value # 4, 5, 6
 var extreme:int setget , _get_extreme
 
 var colors:Array setget , _get_colors
+var color:Color setget , _get_color # Color for which side is more extreme
 
 
 func _init(_scale):
@@ -74,6 +75,10 @@ func _get_extreme():
 
 func _get_colors():
 	return Colors.get_colors(scale)
+
+
+func _get_color():
+	return Colors.COLOR_MAP[_get_extreme()]
 
 
 static func get_change_info(delta, key):

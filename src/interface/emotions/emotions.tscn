@@ -36,7 +36,8 @@ __meta__ = {
 margin_right = 136.0
 margin_bottom = 12.0
 custom_fonts/font = ExtResource( 1 )
-text = "hello"
+align = 1
+autowrap = true
 
 [node name="rage_terror" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0

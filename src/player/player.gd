@@ -26,7 +26,7 @@ func _ready():
 
 func get_most_extreme_scale() -> EmotionScale:
 	var most_extreme = emotions.RAGE_TERROR
-	var extreme_value = EmotionScale.NEUTRAL_VALUE
+	var extreme_value = 0
 	
 	var scales = [
 		emotions.RAGE_TERROR,

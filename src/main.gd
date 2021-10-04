@@ -29,6 +29,7 @@ var card_selected:bool = false
 
 func _ready():
 	player = Player.new()
+	Signals.emit_signal("player_changed", player)
 	
 	# Get all possible scenarios once at start.
 	# Order them based on that property.

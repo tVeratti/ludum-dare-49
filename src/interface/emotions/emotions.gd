@@ -23,5 +23,6 @@ func _on_emotion_changed(player:Player):
 
 	if scale.value >= EmotionScale.MAX_VALUE - 1 or scale.value <= EmotionScale.MIN_VALUE + 1:
 		feeling.text = "You feel %s" % EMOTION_MAP[extreme]
+		feeling.modulate = scale.color
 	else:
 		feeling.text = ""
