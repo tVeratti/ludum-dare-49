@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Nice"
+flavor_text = "The stick you found is perfect. It's durable with just enough flexibility and has a small angled point at the end. This was meant to be. "
+modifier_type = 4
+rage_terror = 0
+vigilance_amazement = 1
+ecstasy_grief = -1
+admiration_loathing = -1

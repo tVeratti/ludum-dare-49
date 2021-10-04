@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://scenario/scenario.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/cards/go hike/Get_Walking_Stick.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/cards/go hike/Drink_Water.tres" type="Resource" id=3]
+[ext_resource path="res://card/resources/cards/go hike/Cross_Small_Stream.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "Go for a hike"
+flavor_text = ""
+order = 2
+cards = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]

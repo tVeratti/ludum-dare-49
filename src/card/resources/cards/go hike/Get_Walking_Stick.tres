@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/outcomes/go hike/Get_Walking_Stick_4.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/outcomes/go hike/Get_Walking_Stick_1.tres" type="Resource" id=3]
+[ext_resource path="res://card/resources/outcomes/go hike/Get_Walking_Stick_2.tres" type="Resource" id=4]
+[ext_resource path="res://card/resources/outcomes/go hike/Get_Walking_Stick_3.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+title = "Find a Walking Stick"
+flavor_text = ""
+outcomes = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ) ]
