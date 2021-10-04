@@ -121,7 +121,7 @@ func _on_card_selected(card:Card):
 	player.ecstasy_grief.value += outcome.ecstasy_grief
 	player.admiration_loathing.value += outcome.admiration_loathing
 
-	Signals.emit_signal("outcome_triggered", outcome)
+	Signals.emit_signal("outcome_triggered", outcome, player)
 
 
 func _on_scenario_started(scenario):

@@ -86,21 +86,27 @@ static func get_change_info(delta, key):
 	var labels = get_labels(key)
 	var colors = Colors.get_colors(key)
 	
+	var part = OutcomePart.new()
+	part.scale_key = key
+	part.delta = abs(delta)
+	
 	var type
 	var label
 	var color
 	
-	if delta == 0: return
+	if delta == 0: return null
 	elif delta < 0:
-		type = emotion[0]
-		label = labels[0]
-		color = colors[0]
+		part.type_key = emotion[0]
+		part.opposite_type_key = emotion[1]
+		part.label = labels[0]
+		part.color = colors[0]
 	else:
-		type = emotion[1]
-		label = labels[1]
-		color = colors[1]
+		part.type_key = emotion[1]
+		part.opposite_type_key = emotion[0]
+		part.label = labels[1]
+		part.color = colors[1]
 	
-	return [type, abs(delta), label, color]
+	return part
 
 
 static func get_labels(s):

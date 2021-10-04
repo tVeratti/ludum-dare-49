@@ -9,6 +9,7 @@ func _ready():
 	label.text = scenario.title
 	float_animation.play("float")
 
+	enable()
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 
 

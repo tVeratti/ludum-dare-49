@@ -22,10 +22,11 @@ onready var display = $display
 
 onready var card_parts = $Viewport/card_parts
 
-var disabled:bool = false
+var disabled:bool = true
 var hovered:bool = false
 var target_origin:Vector3
 var target_hover:Vector3
+var delay:float
 
 var positioned:bool = false
 
@@ -38,13 +39,8 @@ func _ready():
 	
 	# Move to its starting offset.
 	if target_offset.length() > 0:
-		move_tween.interpolate_property(self, "translation", translation, target_offset, 0.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		move_tween.interpolate_property(self, "translation", translation, target_offset, 0.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT, delay)
 		move_tween.start()
-		
-		yield(get_tree().create_timer(0.3), "timeout")
-		var pitch_mod = rand_range(-0.1, 0.1)
-		place_audio.pitch_scale = 1 + pitch_mod
-		place_audio.play()
 
 
 func set_card_back(texture:Texture):
@@ -131,3 +127,6 @@ func _on_Area_mouse_exited():
 
 func _on_move_tween_tween_all_completed():
 	positioned = true
+	var pitch_mod = rand_range(-0.1, 0.1)
+	place_audio.pitch_scale = 1 + pitch_mod
+	place_audio.play()

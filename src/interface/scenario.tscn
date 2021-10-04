@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://interface/scenario.gd" type="Script" id=1]
 [ext_resource path="res://interface/text.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interface/bold_text.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/regular.tres" type="DynamicFont" id=4]
 
 [node name="scenario_test" type="MarginContainer"]
 anchor_right = 1.0
@@ -63,10 +64,9 @@ margin_top = 168.0
 margin_right = 1240.0
 margin_bottom = 168.0
 
-[node name="next" type="Button" parent="layout"]
-visible = false
+[node name="press_any" type="Label" parent="layout"]
+margin_top = 172.0
 margin_right = 1240.0
-margin_bottom = 680.0
-text = "next scenario"
-
-[connection signal="pressed" from="layout/next" to="." method="_on_next_pressed"]
+margin_bottom = 184.0
+custom_fonts/font = ExtResource( 4 )
+text = "------- Press any key to continue -------"

@@ -51,6 +51,14 @@ func get_extreme_emotion(scale:EmotionScale):
 	return scale.right
 
 
+func get_scale_by_key(key:int):
+	match(key):
+		EmotionScale.SCALES.RAGE_TERROR: return self.rage_terror
+		EmotionScale.SCALES.VIGILANCE_AMAZEMENT: return self.vigilance_amazement
+		EmotionScale.SCALES.ECSTASY_GRIEF: return self.ecstasy_grief
+		EmotionScale.SCALES.ADMIRATION_LOATHING: return self.admiration_loathing
+
+
 func get_emotion_raw(type:int) -> int:
 	match(type):
 		EmotionScale.TYPES.RAGE: return self.rage_terror.left

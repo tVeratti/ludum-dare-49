@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://card/outcome.gd"
 }, {
 "base": "Node",
+"class": "OutcomePart",
+"language": "GDScript",
+"path": "res://card/outcome_part.gd"
+}, {
+"base": "Node",
 "class": "Player",
 "language": "GDScript",
 "path": "res://player/player.gd"
@@ -44,6 +49,7 @@ _global_script_class_icons={
 "Card": "",
 "EmotionScale": "",
 "Outcome": "",
+"OutcomePart": "",
 "Player": "",
 "Scenario": ""
 }
@@ -64,6 +70,7 @@ Symbols="*res://infrastructure/symbols.gd"
 
 window/size/width=1280
 window/size/height=720
+window/size/resizable=false
 window/stretch/shrink=2.0
 
 [physics]

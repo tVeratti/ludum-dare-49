@@ -2,7 +2,7 @@ extends Spatial
 
 var CardScene = load("res://card/scenes/action_card.tscn")
 
-const CARD_OFFSET = 0.6
+const CARD_OFFSET = 0.5
 
 
 onready var cards:Spatial = $cards
@@ -16,17 +16,20 @@ func _ready():
 
 func render_cards(scenario:Scenario):
 	# Create new card nodes for new scenario.
-	var offset:Vector3 = Vector3(0.3, 0, 0)
+	var index = 1
 	for card in scenario.cards:
 		var card_button = CardScene.instance()
 		card_button.card = card
-		card_button.target_offset = offset + Vector3(0, 0, -.1)
+		card_button.target_offset = Vector3(0.1 + (CARD_OFFSET * index), -0.05, -.1)
+		card_button.delay = index * 0.5
 		
 		# Delay each card just a tiny bit for a dealing effect
-		yield(get_tree().create_timer(0.5), "timeout")
 		cards.add_child(card_button)
 		
-		offset += Vector3(CARD_OFFSET, 0, 0)
+		index += 1
+	
+	yield(get_tree().create_timer(index * 0.5), "timeout")
+	Signals.emit_signal("hand_ready")
 
 
 func _on_scenario_requested():
