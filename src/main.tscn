@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/Make_Camp_2.tres" type="Resource" id=2]
@@ -11,8 +11,9 @@
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=9]
 [ext_resource path="res://assets/textures/background_2.png" type="Texture" id=10]
 [ext_resource path="res://assets/textures/shadows.png" type="Texture" id=11]
-[ext_resource path="res://assets/audio/ld49_music1.ogg" type="AudioStream" id=12]
 [ext_resource path="res://scenario/resources/Go_Hike_3.tres" type="Resource" id=12]
+[ext_resource path="res://assets/audio/ld49_music1.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/ld49_ambientloop.ogg" type="AudioStream" id=14]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -153,7 +154,11 @@ shadow_enabled = true
 environment = SubResource( 4 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 13 )
+autoplay = true
+
+[node name="ambiance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
 autoplay = true
 
 [connection signal="animation_finished" from="scenario/river_animations" to="." method="_on_river_animation_finished"]
