@@ -60,11 +60,18 @@ Signals="*res://infrastructure/signals.gd"
 Colors="*res://infrastructure/colors.gd"
 Symbols="*res://infrastructure/symbols.gd"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/shrink=2.0
+
 [physics]
 
 common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/filters/msaa=3
+2d/snapping/use_gpu_pixel_snap=true
+quality/shadows/filter_mode=0
 environment/default_environment="res://default_env.tres"
