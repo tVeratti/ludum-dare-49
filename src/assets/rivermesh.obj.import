@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rivermesh.obj-ca1162444c63a592fe9df7104b02cebf.mesh"
+
+[deps]
+
+files=[ "res://.import/rivermesh.obj-ca1162444c63a592fe9df7104b02cebf.mesh" ]
+
+source_file="res://assets/rivermesh.obj"
+dest_files=[ "res://.import/rivermesh.obj-ca1162444c63a592fe9df7104b02cebf.mesh", "res://.import/rivermesh.obj-ca1162444c63a592fe9df7104b02cebf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
