@@ -1,11 +1,98 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://interface/text.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/fonts/title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://interface/title.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interface/text.tscn" type="PackedScene" id=2]
+[ext_resource path="res://title.gd" type="Script" id=3]
 
-[node name="text" instance=ExtResource( 1 )]
+[node name="title" type="MarginContainer"]
+margin_right = 1280.0
+margin_bottom = 64.0
+custom_constants/margin_right = 200
+custom_constants/margin_top = 150
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 100
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="label" parent="." index="0"]
-margin_top = 140.0
-margin_bottom = 172.0
-custom_fonts/font = ExtResource( 2 )
+[node name="main" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 150.0
+margin_right = 1080.0
+margin_bottom = 230.0
+
+[node name="text" parent="main" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1030.0
+margin_bottom = 48.0
+label = "The Cards We're Dealt"
+delay = 0.5
+speed = 0.3
+
+[node name="any" parent="main" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.929412 )
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 52.0
+margin_right = 1030.0
+margin_bottom = 64.0
+label = "             PRESS ANY KEY"
+delay = 3.0
+speed = 0.8
+
+[node name="story" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 50.0
+margin_top = 150.0
+margin_right = 450.0
+margin_bottom = 230.0
+custom_constants/separation = 10
+
+[node name="one" parent="story" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1130.0
+margin_bottom = 12.0
+label = "Life at home is unstable."
+delay = 0.5
+speed = 0.5
+auto_play = false
+
+[node name="two" parent="story" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 16.0
+margin_right = 1130.0
+margin_bottom = 28.0
+label = "You've needed an escape for a long time. You've made it to a quiet section of woods where you have some peace."
+delay = 3.0
+speed = 0.5
+auto_play = false
+
+[node name="three" parent="story" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 32.0
+margin_right = 1130.0
+margin_bottom = 44.0
+label = "With a little luck, maybe you can get some emotional clarity and balance before you have to return to your life."
+delay = 7.0
+speed = 0.5
+auto_play = false
+
+[node name="any" parent="story" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.929412 )
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 68.0
+margin_right = 1030.0
+margin_bottom = 80.0
+label = "             PRESS ANY KEY"
+delay = 8.0
+speed = 0.8
+auto_play = false
+
+[node name="event_timer" type="Timer" parent="."]
+one_shot = true

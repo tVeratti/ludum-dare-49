@@ -24,7 +24,6 @@ onready var hand:Spatial = $hand
 onready var river:Spatial = $scenario/river
 onready var river_animations:AnimationPlayer = $scenario/river_animations
 
-onready var title = $CanvasLayer/title
 onready var interface = $CanvasLayer/interface
 onready var interface_fade:Tween = $interface_fade
 
@@ -42,20 +41,14 @@ func _ready():
 	
 #	next_scenario()
 	
+	Signals.connect("start", self, "start")
 	Signals.connect("card_selected", self, "_on_card_selected")
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 	Signals.connect("scenario_started", self, "_on_scenario_started")
 	Signals.connect("emotion_changed", self, "_on_emotion_changed")
 
 
-func _input(event):
-	if current_scenario == null and (event is InputEventKey or event is InputEventMouseButton):
-		if event.pressed:
-			start()
-
-
 func start():
-	title.visible = false
 	interface_fade.interpolate_property(interface, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	interface_fade.start()
 	next_scenario()

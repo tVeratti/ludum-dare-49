@@ -1,5 +1,6 @@
 extends Node
 
+signal start()
 
 signal scenario_requested()
 signal scenario_ready(scenario)

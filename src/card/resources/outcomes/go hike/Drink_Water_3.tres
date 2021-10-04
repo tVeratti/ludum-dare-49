@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-title = "Dying"
-flavor_text = "You take the bottl from your pack and realize it's half empty. You didn't fill it before you left."
+title = "Dehydrated"
+flavor_text = "You take the bottle from your pack and realize it's half empty. You didn't fill it before you left."
 modifier_type = 5
 rage_terror = 0
 vigilance_amazement = 0

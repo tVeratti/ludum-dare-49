@@ -37,6 +37,7 @@ anchor_bottom = 0.0
 margin_top = 104.0
 margin_right = 1240.0
 margin_bottom = 116.0
+delay = 0.1
 
 [node name="flavor" parent="layout" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -44,6 +45,8 @@ anchor_bottom = 0.0
 margin_top = 120.0
 margin_right = 1240.0
 margin_bottom = 132.0
+delay = 0.5
+speed = 0.8
 
 [node name="outcome_title" parent="layout" instance=ExtResource( 3 )]
 anchor_right = 0.0

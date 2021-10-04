@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/_Hidden_Treasure.tres" type="Resource" id=2]
@@ -29,7 +29,6 @@
 [ext_resource path="res://assets/textures/firelight2.png" type="Texture" id=27]
 [ext_resource path="res://assets/textures/firelight3.png" type="Texture" id=28]
 [ext_resource path="res://title.tscn" type="PackedScene" id=29]
-[ext_resource path="res://interface/text.tscn" type="PackedScene" id=30]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -244,12 +243,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.657354, -0.0187214 
 modulate = Color( 1, 1, 1, 0.282353 )
 frames = SubResource( 3 )
 animation = "New Anim"
+frame = 3
 playing = true
 
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
 frames = SubResource( 10 )
-frame = 3
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]
@@ -332,34 +331,7 @@ size = 3.6
 modulate = Color( 1, 1, 1, 0 )
 mouse_filter = 2
 
-[node name="title" type="VBoxContainer" parent="CanvasLayer"]
-margin_left = 69.8469
-margin_top = 138.75
-margin_right = 1044.85
-margin_bottom = 370.75
-custom_constants/separation = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="text" parent="CanvasLayer/title" instance=ExtResource( 29 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 975.0
-margin_bottom = 43.0
-label = "The Cards We're Dealt"
-delay = 1.0
-speed = 0.4
-
-[node name="any" parent="CanvasLayer/title" instance=ExtResource( 30 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 53.0
-margin_right = 975.0
-margin_bottom = 65.0
-label = "          PRESS ANY KEY"
-delay = 3.0
-speed = 0.5
+[node name="title" parent="CanvasLayer" instance=ExtResource( 29 )]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.996651, 0.0615644, 0.0538131, -0.063181, 0.997584, 0.0288731, -0.0519056, -0.0321764, 0.998134, 0, 1.75788, 12.2908 )
