@@ -1,13 +1,16 @@
 extends Node
 
-const RAGE = Color('FF0000')
-const TERROR = Color('FF6A00')
-const VIGILANCE = Color('B6FF00')
-const AMAZEMENT = Color('00FF90')
-const ECSTASY = Color('FFD800')
-const GRIEF = Color('0094FF')
-const ADMIRATION = Color('10FF00')
-const LOATHING = Color('FF00F6')
+const RAGE = Color('B7191E')
+const TERROR = Color('D06337')
+
+const VIGILANCE = Color('ACC351')
+const AMAZEMENT = Color('42B7AA')
+
+const ECSTASY = Color('EAAF51')
+const GRIEF = Color('2E70C7')
+
+const ADMIRATION = Color('8CAC56')
+const LOATHING = Color('C043A0')
 
 
 const COLOR_MAP = {
