@@ -43,8 +43,19 @@ func _ready():
 
 
 func next_scenario():
-	# Pop from the array of possibilities so it cannot be chosen again.
-	current_scenario = possible_scenarios.pop_back()
+	var current_extreme = player.get_most_extreme_scale()
+	current_scenario = null
+	
+	# Choose the next scenario based on the character's emotional balance.
+	for scenario in possible_scenarios:
+		if scenario.primary_scale == current_extreme.scale:
+			current_scenario = scenario
+			break
+	
+	# Erase from the array of possibilities so it cannot be chosen again.
+	if current_scenario == null:
+		current_scenario = possible_scenarios.pop_back()
+	else: possible_scenarios.erase(current_scenario)
 	
 	# Reset all board stuff so they can click the scenario to "enter" it
 	
@@ -60,7 +71,6 @@ func next_scenario():
 		river.translation = Vector3.ZERO
 		
 		river.add_child(scenario_card)
-		print(current_scenario.title)
 		Signals.emit_signal("scenario_ready", current_scenario)
 
 

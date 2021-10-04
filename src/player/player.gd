@@ -24,6 +24,33 @@ func _ready():
 	Signals.connect("outcome_triggered", self, "_on_outcome_triggered")
 
 
+func get_most_extreme_scale():
+	var most_extreme = emotions.RAGE_TERROR
+	var extreme_value = EmotionScale.NEUTRAL_VALUE
+	
+	var scales = [
+		emotions.RAGE_TERROR,
+		emotions.VIGILANCE_AMAZEMENT,
+		emotions.ECSTASY_GRIEF,
+		emotions.ADMIRATION_LOATHING
+	]
+	var current = extreme_value
+	for scale in scales:
+		current = _get_extreme(scale)
+		if current > extreme_value:
+			most_extreme = scale
+			extreme_value = current
+	
+	return most_extreme
+
+
+func _get_extreme(scale:EmotionScale):
+	if scale.left >= EmotionScale.NEUTRAL_VALUE:
+		return scale.left
+		
+	return scale.right
+
+
 func get_emotion_raw(type:int) -> int:
 	match(type):
 		EmotionScale.TYPES.RAGE: return self.rage_terror.left

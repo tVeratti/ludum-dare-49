@@ -11,3 +11,4 @@ title = "Go for a hike"
 flavor_text = ""
 order = 2
 cards = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+primary_scale = 0

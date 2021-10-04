@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "A Sad Memory"
+flavor_text = "Upon digging you find an old photo of a couple. The person on the left is scratched out. Someone left a sad memory to decay in the dirt."
+modifier_type = 4
+rage_terror = 0
+vigilance_amazement = 0
+ecstasy_grief = 2
+admiration_loathing = 0

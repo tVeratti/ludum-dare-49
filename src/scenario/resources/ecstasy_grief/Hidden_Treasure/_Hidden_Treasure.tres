@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/card_Cover.tres" type="Resource" id=1]
+[ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/card_Scout.tres" type="Resource" id=2]
+[ext_resource path="res://scenario/scenario.gd" type="Script" id=3]
+[ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/card_Dig.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 3 )
+title = "Hidden Treasure"
+flavor_text = "You see a mound of fresh earth. Someone or something has clearly just dug and re-buried a hole."
+order = 0
+cards = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ]
+primary_scale = 2

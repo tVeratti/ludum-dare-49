@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scenario/scenario.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = ""
+flavor_text = ""
+order = 0
+cards = [  ]
+primary_scale = 0

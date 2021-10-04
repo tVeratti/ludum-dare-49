@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "No One"
+flavor_text = "You look around nearby but there is no trace of whoever dug this mound."
+modifier_type = 6
+rage_terror = 0
+vigilance_amazement = -1
+ecstasy_grief = 0
+admiration_loathing = 1

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Hands Off!"
+flavor_text = "As you approach the mound, a skunk emerges from the trees, clearly ready to defend its treasure. You move on and avoid getting sprayed."
+modifier_type = 1
+rage_terror = -1
+vigilance_amazement = -1
+ecstasy_grief = 0
+admiration_loathing = 0

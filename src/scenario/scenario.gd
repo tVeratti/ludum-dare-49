@@ -7,6 +7,9 @@ export(String) var flavor_text:String = ''
 export(int) var order:int = 0
 export(Array, Resource) var cards:Array = []
 
+# Primary scale determines if this scenario will be selected when the character has an extreme
+# imbalance of the current emotional scale.
+export(EmotionScale.SCALES) var primary_scale:int = EmotionScale.SCALES.RAGE_TERROR
 
 const DURATION:float = 30.0
 

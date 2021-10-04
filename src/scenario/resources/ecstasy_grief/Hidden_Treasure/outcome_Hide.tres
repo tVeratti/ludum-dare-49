@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Hidden"
+flavor_text = "You move some leaves and brush over the mound. You can be sure it won't be as easily found in the future."
+modifier_type = 3
+rage_terror = 0
+vigilance_amazement = -2
+ecstasy_grief = 0
+admiration_loathing = 0

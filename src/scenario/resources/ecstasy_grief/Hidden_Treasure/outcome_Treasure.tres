@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Jackpot"
+flavor_text = "Within the dirt you find a small wooden box. Inside is a sparkling necklace that clearly holds great value."
+modifier_type = 5
+rage_terror = 0
+vigilance_amazement = 1
+ecstasy_grief = -2
+admiration_loathing = 0

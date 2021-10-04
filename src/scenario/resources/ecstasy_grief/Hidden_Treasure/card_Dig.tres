@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/outcome_Simple.tres" type="Resource" id=2]
+[ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/outcome_Nothing.tres" type="Resource" id=3]
+[ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/outcome_Treasure.tres" type="Resource" id=4]
+[ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/outcome_Ambush.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+title = "Dig up the mound"
+flavor_text = ""
+outcomes = [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]
