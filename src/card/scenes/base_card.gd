@@ -22,6 +22,7 @@ onready var display = $display
 
 onready var card_parts = $Viewport/card_parts
 
+var readonly:bool = false
 var disabled:bool = true
 var hovered:bool = false
 var target_origin:Vector3
@@ -67,7 +68,7 @@ func flip():
 
 
 func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
-	if not disabled:
+	if not disabled and not readonly:
 		if event is InputEventMouseMotion:
 #			var look_offset = click_position - Vector3(0, 0, 10)
 #			look_at(look_offset, Vector3.UP)
@@ -104,7 +105,7 @@ func tween_look(target):
 
 
 func _on_Area_mouse_entered():
-	if not disabled:
+	if not disabled and not readonly:
 		hovered = true
 		hover()
 		tween_scale(HOVER_SCALE)
@@ -118,7 +119,7 @@ func _on_Area_mouse_entered():
 
 func _on_Area_mouse_exited():
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	if not disabled:
+	if not disabled and not readonly:
 		hovered = false
 		Signals.emit_signal("card_unhovered")
 		tween_scale(Vector3.ONE)

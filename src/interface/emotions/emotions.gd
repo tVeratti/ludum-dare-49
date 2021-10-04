@@ -18,11 +18,12 @@ func _ready():
 
 
 func _on_emotion_changed(player:Player):
-	var scale = player.get_most_extreme_scale()
-	var extreme = scale.extreme
+	if player != null:
+		var scale = player.get_most_extreme_scale()
+		var extreme = scale.extreme
 
-	if scale.value >= EmotionScale.MAX_VALUE - 1 or scale.value <= EmotionScale.MIN_VALUE + 1:
-		feeling.text = "You feel %s" % EMOTION_MAP[extreme]
-		feeling.modulate = scale.color
-	else:
-		feeling.text = ""
+		if scale.value >= EmotionScale.MAX_VALUE - 1 or scale.value <= EmotionScale.MIN_VALUE + 1:
+			feeling.text = "You feel %s" % EMOTION_MAP[extreme]
+			feeling.modulate = scale.color
+		else:
+			feeling.text = ""

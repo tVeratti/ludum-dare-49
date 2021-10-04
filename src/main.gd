@@ -9,6 +9,7 @@ extends Spatial
 #	Apply modifiers to emotion scales
 
 var ScenarioCard = load("res://scenario/scenes/scenario_card.tscn")
+var End = load("res://end.tscn")
 
 
 # Add all scenarios that can appear in a game through editor
@@ -17,6 +18,7 @@ export(Array, Resource) var scenarios:Array = []
 
 var possible_scenarios:Array = []
 var current_scenario:Scenario
+var results:Array = []
 
 var player:Player
 
@@ -26,20 +28,13 @@ onready var river_animations:AnimationPlayer = $scenario/river_animations
 
 onready var interface = $CanvasLayer/interface
 onready var interface_fade:Tween = $interface_fade
+onready var music:AudioStreamPlayer = $music
 
 var card_selected:bool = false
 
 
 func _ready():
 	player = Player.new()
-	Signals.emit_signal("player_changed", player)
-	
-	# Get all possible scenarios once at start.
-	# Order them based on that property.
-	possible_scenarios = scenarios.duplicate()
-	possible_scenarios.sort_custom(Scenario, "sort_self")
-	
-#	next_scenario()
 	
 	Signals.connect("start", self, "start")
 	Signals.connect("card_selected", self, "_on_card_selected")
@@ -49,8 +44,19 @@ func _ready():
 
 
 func start():
+	results = []
+	
+	player = Player.new()
+	Signals.emit_signal("player_changed", player)
+	
+	# Get all possible scenarios once at start.
+	# Order them based on that property.
+	possible_scenarios = scenarios.duplicate()
+	possible_scenarios.sort_custom(Scenario, "sort_self")
+	
 	interface_fade.interpolate_property(interface, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	interface_fade.start()
+	music.play()
 	next_scenario()
 
 
@@ -73,7 +79,9 @@ func next_scenario():
 	
 	if current_scenario == null:
 		# End of game
-		pass
+		var ending = End.instance()
+		$CanvasLayer.add_child(ending)
+		ending.show_end(player, results)
 	else:
 		var scenario_card = ScenarioCard.instance()
 		scenario_card.scenario = current_scenario
@@ -131,6 +139,7 @@ func _on_card_selected(card:Card):
 	player.ecstasy_grief.value += outcome.ecstasy_grief
 	player.admiration_loathing.value += outcome.admiration_loathing
 
+	results.append([current_scenario, outcome])
 	Signals.emit_signal("outcome_triggered", outcome, player)
 
 

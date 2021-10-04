@@ -18,6 +18,17 @@ const SCALES_MAP:Dictionary = {
 	SCALES.ADMIRATION_LOATHING: [TYPES.ADMIRATION, TYPES.LOATHING]
 }
 
+const LABELS_MAP = {
+	TYPES.RAGE: "angry",
+	TYPES.TERROR: "afraid",
+	TYPES.VIGILANCE: "uptight",
+	TYPES.AMAZEMENT: "overwhelmed",
+	TYPES.ECSTASY: "manic",
+	TYPES.GRIEF: "sad",
+	TYPES.ADMIRATION: "awestruck",
+	TYPES.LOATHING: "frustrated",
+}
+
 
 const MIN_VALUE:int = 0
 const MAX_VALUE:int = 6

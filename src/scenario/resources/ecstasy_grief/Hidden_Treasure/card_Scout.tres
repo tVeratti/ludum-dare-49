@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource( 1 )
-title = "Scout for who might've dug it"
+title = "Scout for onlookers"
 flavor_text = ""
 outcomes = [ ExtResource( 2 ), ExtResource( 3 ) ]
