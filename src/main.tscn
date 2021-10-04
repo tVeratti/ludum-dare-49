@@ -30,6 +30,7 @@ params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.08
 albedo_color = Color( 0.662745, 0.709804, 0.819608, 1 )
 albedo_texture = ExtResource( 16 )
+uv1_scale = Vector3( 1, 1.5, 1 )
 
 [sub_resource type="GDScript" id=4]
 script/source = "extends Sprite3D
@@ -161,19 +162,19 @@ material/0 = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54653, -1.11423, -0.531034 )
 
 [node name="bg_sprite" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.264, -0.0929284 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.264, -0.796654 )
 cast_shadow = 0
 alpha_cut = 2
 texture = ExtResource( 9 )
 
 [node name="bg_sprite4" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0111732 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.102316 )
 material_override = SubResource( 3 )
 cast_shadow = 0
 alpha_cut = 2
 texture = ExtResource( 16 )
 script = SubResource( 4 )
-offset_speed = -0.008
+offset_speed = 0.008
 sin_frequency = 0.016
 
 [node name="bg_sprite2" type="Sprite3D" parent="."]
