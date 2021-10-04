@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Grrr"
+flavor_text = "You realize you left your pack open, and furry friend found your food. You only have half left to cook."
+modifier_type = 7
+rage_terror = -1
+vigilance_amazement = 0
+ecstasy_grief = 0
+admiration_loathing = 2

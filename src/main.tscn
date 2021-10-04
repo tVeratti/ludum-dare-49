@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
-[ext_resource path="res://scenario/resources/sample_scenario.tres" type="Resource" id=2]
+[ext_resource path="res://scenario/resources/Make_Camp_2.tres" type="Resource" id=2]
 [ext_resource path="res://interface/scenario.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/emotions/emotions.tscn" type="PackedScene" id=4]
 [ext_resource path="res://card/scenes/hand.tscn" type="PackedScene" id=5]
@@ -42,7 +42,7 @@ tonemap_mode = 2
 
 [node name="main" type="Spatial"]
 script = ExtResource( 1 )
-scenarios = [ ExtResource( 2 ), ExtResource( 7 ) ]
+scenarios = [ ExtResource( 7 ), ExtResource( 2 ) ]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 0, -1.36461 )

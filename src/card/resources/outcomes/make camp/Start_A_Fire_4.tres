@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Easy as 1, 2, 3!"
+flavor_text = "Your time camping with friends and family comes in handy as you effortlessly stack your kindling and firewood in a log cabin style in the fire pit. The fire crackles with validation. "
+modifier_type = 6
+rage_terror = 0
+vigilance_amazement = -1
+ecstasy_grief = -1
+admiration_loathing = -1

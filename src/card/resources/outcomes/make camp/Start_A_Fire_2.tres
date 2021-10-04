@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Forget Me Not"
+flavor_text = "As you gather kindling around the campsite, you realize you forgot a firestarter. This might take longer than you thought. "
+modifier_type = 0
+rage_terror = -2
+vigilance_amazement = 1
+ecstasy_grief = 0
+admiration_loathing = 0

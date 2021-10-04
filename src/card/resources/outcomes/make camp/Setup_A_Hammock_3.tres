@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Flip-flop"
+flavor_text = "It's easy setting up the hammock, but you're eagerness to relax causes you to be flipped out of the hammock as soon as you get in."
+modifier_type = 1
+rage_terror = 2
+vigilance_amazement = 0
+ecstasy_grief = 0
+admiration_loathing = 0

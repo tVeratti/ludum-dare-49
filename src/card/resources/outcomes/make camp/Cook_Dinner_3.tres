@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Butterfingers"
+flavor_text = "You're ravenous. You're moving so quickly to get the food off the firepit that you end up dropping it all into the fire. You watch and listen to the sizzles of sadness."
+modifier_type = 0
+rage_terror = -3
+vigilance_amazement = 0
+ecstasy_grief = 2
+admiration_loathing = 0
