@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Fire, fire, fire!"
+flavor_text = "The stick you use to put marshmallows on breaks over the fire, dropping the marshmallow into the fiery depths."
+modifier_type = 5
+rage_terror = -1
+vigilance_amazement = 0
+ecstasy_grief = 2
+admiration_loathing = 0
