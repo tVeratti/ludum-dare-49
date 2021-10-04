@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/_Hidden_Treasure.tres" type="Resource" id=2]
@@ -6,16 +6,21 @@
 [ext_resource path="res://assets/audio/ld49_music1.ogg" type="AudioStream" id=4]
 [ext_resource path="res://card/scenes/hand.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/textures/river.png" type="Texture" id=6]
+[ext_resource path="res://scenario/resources/Find_your_way_1.tres" type="Resource" id=7]
 [ext_resource path="res://assets/rivermesh.obj" type="ArrayMesh" id=8]
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=9]
 [ext_resource path="res://assets/textures/background_2.png" type="Texture" id=10]
 [ext_resource path="res://assets/textures/shadows.png" type="Texture" id=11]
+[ext_resource path="res://scenario/resources/Go_Hike_3.tres" type="Resource" id=12]
 [ext_resource path="res://assets/textures/river2.png" type="Texture" id=13]
 [ext_resource path="res://assets/audio/ld49_ambientloop.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/textures/river1.png" type="Texture" id=15]
 [ext_resource path="res://assets/textures/cloud_layer.png" type="Texture" id=16]
 [ext_resource path="res://assets/textures/background_1.png" type="Texture" id=17]
+[ext_resource path="res://scenario/resources/Make_Camp_2.tres" type="Resource" id=18]
+[ext_resource path="res://scenario/resources/rage_terror/Bear/_Bear.tres" type="Resource" id=19]
 [ext_resource path="res://scenario/resources/admiration_loathing/Bird_Sighting/_Bird_Sighting.tres" type="Resource" id=20]
+[ext_resource path="res://scenario/resources/vigilance_amazement/Trunk/_Trunk.tres" type="Resource" id=21]
 [ext_resource path="res://assets/textures/mc_sitting.png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/fire.png" type="Texture" id=23]
 [ext_resource path="res://assets/textures/firepit.png" type="Texture" id=24]
@@ -219,7 +224,7 @@ tonemap_mode = 2
 
 [node name="main" type="Spatial"]
 script = ExtResource( 1 )
-scenarios = [ ExtResource( 2 ), ExtResource( 20 ) ]
+scenarios = [ ExtResource( 2 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 18 ) ]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 0, -1.36461 )
@@ -253,13 +258,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.657354, -0.0187214 
 modulate = Color( 1, 1, 1, 0.282353 )
 frames = SubResource( 3 )
 animation = "New Anim"
-frame = 2
 playing = true
 
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
 frames = SubResource( 10 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]

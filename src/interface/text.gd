@@ -21,7 +21,6 @@ func play():
 
 
 func _set_label(value):
-	visible = false
 	label = value
 	
 	if is_instance_valid(node):
@@ -29,5 +28,4 @@ func _set_label(value):
 		fade_animation.stop(true)
 		yield(get_tree().create_timer(delay), "timeout")
 		fade_animation.play("fade")
-		visible = true
 		node.text = label
