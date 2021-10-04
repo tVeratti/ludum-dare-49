@@ -1,11 +1,14 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://scenario/scenario.gd" type="Script" id=1]
+[ext_resource path="res://scenario/resources/rage_terror/Bear/card_Approach.tres" type="Resource" id=2]
+[ext_resource path="res://scenario/resources/rage_terror/Bear/card_Hide.tres" type="Resource" id=3]
+[ext_resource path="res://scenario/resources/rage_terror/Bear/card_Watch.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
-title = ""
-flavor_text = ""
+title = "Distant Bear"
+flavor_text = "In the distance you see a bear exploring near an open field."
 order = 0
-cards = [  ]
+cards = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 primary_scale = 0

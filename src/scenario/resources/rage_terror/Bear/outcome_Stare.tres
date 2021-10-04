@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-title = ""
-flavor_text = ""
+title = "Stare"
+flavor_text = "The bear stares in your direction. It doesn't seem very interested in you though, and walks casually in the other direction."
 modifier_type = 0
 rage_terror = 0
 vigilance_amazement = 0

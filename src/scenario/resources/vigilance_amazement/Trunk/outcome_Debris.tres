@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Debris"
+flavor_text = "You smash the crumbling remains of the trunk and move on."
+modifier_type = 3
+rage_terror = -1
+vigilance_amazement = 0
+ecstasy_grief = 0
+admiration_loathing = 1

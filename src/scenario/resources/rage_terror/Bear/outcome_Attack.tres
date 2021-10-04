@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-title = ""
-flavor_text = ""
+title = "Challenge"
+flavor_text = "The bear stands on its back legs, threatening you with an attack. You quickly hide behind cover and avoid any kind of engagement."
 modifier_type = 0
-rage_terror = 0
+rage_terror = 2
 vigilance_amazement = 0
 ecstasy_grief = 0
 admiration_loathing = 0

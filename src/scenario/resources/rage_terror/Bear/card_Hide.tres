@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://scenario/resources/rage_terror/Bear/outcome_Stare.tres" type="Resource" id=2]
+[ext_resource path="res://scenario/resources/rage_terror/Bear/outcome_Quiet.tres" type="Resource" id=3]
 
 [resource]
 script = ExtResource( 1 )
-title = ""
+title = "Hide from the bear"
 flavor_text = ""
-outcomes = [  ]
+outcomes = [ ExtResource( 2 ), ExtResource( 3 ) ]

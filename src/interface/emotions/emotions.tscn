@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://assets/fonts/regular.tres" type="DynamicFont" id=1]
 [ext_resource path="res://interface/emotions/emotion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/emotions/emotions.gd" type="Script" id=3]
 
 [node name="emotions" type="MarginContainer"]
 anchor_right = 1.0
@@ -11,13 +13,14 @@ custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="emotions" type="VBoxContainer" parent="."]
-margin_left = 1142.0
-margin_top = 605.0
+margin_left = 1124.0
+margin_top = 584.0
 margin_right = 1260.0
 margin_bottom = 700.0
 mouse_filter = 2
@@ -29,32 +32,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="feeling" type="Label" parent="emotions"]
+margin_right = 136.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 1 )
+text = "hello"
+
 [node name="rage_terror" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 118.0
-margin_bottom = 20.0
+margin_top = 17.0
+margin_right = 136.0
+margin_bottom = 38.0
 
 [node name="vigilance_amazement" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 25.0
-margin_right = 118.0
-margin_bottom = 45.0
+margin_top = 43.0
+margin_right = 136.0
+margin_bottom = 64.0
 scale = 1
 
 [node name="ecstasy_grief" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 50.0
-margin_right = 118.0
-margin_bottom = 70.0
+margin_top = 69.0
+margin_right = 136.0
+margin_bottom = 90.0
 scale = 2
 
 [node name="admiration_loathing" parent="emotions" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 75.0
-margin_right = 118.0
-margin_bottom = 95.0
+margin_top = 95.0
+margin_right = 136.0
+margin_bottom = 116.0
 scale = 3

@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-title = "Family"
-flavor_text = "Two small cubs emerge from bushes near the bear. You can't believe the beautiful view you get of the family."
-modifier_type = 0
+title = "Eek"
+flavor_text = "Ants crawl onto your fingers, leaving a few bites before you're able to shake them off."
+modifier_type = 2
 rage_terror = -1
 vigilance_amazement = 1
 ecstasy_grief = 0
-admiration_loathing = -1
+admiration_loathing = 1

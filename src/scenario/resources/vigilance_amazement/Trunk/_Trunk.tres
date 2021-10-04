@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://scenario/scenario.gd" type="Script" id=1]
+[ext_resource path="res://scenario/resources/vigilance_amazement/Trunk/card_Tap.tres" type="Resource" id=2]
+[ext_resource path="res://scenario/resources/vigilance_amazement/Trunk/card_Smash.tres" type="Resource" id=3]
+[ext_resource path="res://scenario/resources/vigilance_amazement/Trunk/card_Hand.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "Tree Trunk"
+flavor_text = "A rotting tree trunk sits in front of you. It doesn't look very stable and won't stand much longer."
+order = 0
+cards = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
+primary_scale = 1

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://scenario/resources/vigilance_amazement/Trunk/outcome_Ants_Tap.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+title = "Tap the sides"
+flavor_text = ""
+outcomes = [ ExtResource( 2 ) ]

@@ -40,6 +40,7 @@ func _ready():
 	Signals.connect("card_selected", self, "_on_card_selected")
 	Signals.connect("scenario_requested", self, "_on_scenario_requested")
 	Signals.connect("scenario_started", self, "_on_scenario_started")
+	Signals.connect("emotion_changed", self, "_on_emotion_changed")
 
 
 func next_scenario():
@@ -139,3 +140,7 @@ func _on_river_animation_finished(anim_name):
 		cards.shuffle()
 		
 		Signals.emit_signal("scenario_timed_out", cards.pop_back())
+
+
+func _on_emotion_changed(emotion):
+	Signals.emit_signal("player_changed", player)

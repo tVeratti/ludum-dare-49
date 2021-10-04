@@ -30,6 +30,7 @@ var value:int = NEUTRAL_VALUE setget _set_value
 # Calculate it from these getters based on the current scale value.
 var left:int setget , _get_left_value # 0, 1, 2
 var right:int setget , _get_right_value # 4, 5, 6
+var extreme:int setget , _get_extreme
 
 var colors:Array setget , _get_colors
 
@@ -63,6 +64,12 @@ func _get_right_value():
 	# value of 6 is maximum right
 	# any value less than 6 is further away
 	return clamp(value, NEUTRAL_VALUE, MAX_VALUE) - NEUTRAL_VALUE
+
+
+func _get_extreme():
+	var map = SCALES_MAP[scale]
+	if value > NEUTRAL_VALUE: return map[1]
+	else: return map[0]
 
 
 func _get_colors():

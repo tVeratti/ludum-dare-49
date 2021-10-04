@@ -11,3 +11,4 @@ signal outcome_triggered(outcome)
 signal scenario_timed_out(card)
 
 signal emotion_changed(emotion)
+signal player_changed(player)
