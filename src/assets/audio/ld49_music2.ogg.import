@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ld49_music2.ogg-8abf346e498d33c9f1b9c089418fee3b.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -263,7 +263,7 @@ playing = true
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
 frames = SubResource( 10 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]

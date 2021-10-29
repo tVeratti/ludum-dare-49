@@ -199,6 +199,7 @@ func _on_music_finished():
 		# No scenario means menu
 		next_audio = music_resources.menu
 	else:
+		
 		if music.stream == music_resources.game_loop_1:
 			next_audio = music_resources.game_loop_2
 		else:
