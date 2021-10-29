@@ -2,8 +2,11 @@ extends Resource
 
 class_name Scenario
 
+enum TYPES { AGENCY, CHANCE }
+
 export(String) var title:String = ''
 export(String) var flavor_text:String = ''
+export(TYPES) var type = TYPES.AGENCY
 export(int) var order:int = 0
 export(Array, Resource) var cards:Array = []
 
@@ -22,7 +25,7 @@ func start():
 
 
 static func sort_self(a, b):
-	# Sort descending so that we can sue pop_back
+	# Sort descending so that we can use pop_back
 	return a.order > b.order
 
 

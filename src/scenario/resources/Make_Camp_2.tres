@@ -9,6 +9,7 @@
 script = ExtResource( 1 )
 title = "Make Camp"
 flavor_text = "You drop your pack and plop to the ground. You made it to the campsite. The hike from the car was much longer than you remember, and let's be honest...you're out of practice. "
+type = 0
 order = 1
 cards = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 primary_scale = 0

@@ -11,6 +11,12 @@ extends Spatial
 var ScenarioCard = load("res://scenario/scenes/scenario_card.tscn")
 var End = load("res://end.tscn")
 
+const MUSIC_FADE_DURATION = 4.0 # seconds
+var music_resources = {
+	"menu": preload("res://assets/audio/ld49_menumusic1.ogg"),
+	"game_loop_1": preload("res://assets/audio/ld49_music1.ogg"),
+	"game_loop_2": preload("res://assets/audio/ld49_music2.ogg")
+}
 
 # Add all scenarios that can appear in a game through editor
 # From: /scenario/resources
@@ -29,12 +35,14 @@ onready var river_animations:AnimationPlayer = $scenario/river_animations
 onready var interface = $CanvasLayer/interface
 onready var interface_fade:Tween = $interface_fade
 onready var music:AudioStreamPlayer = $music
+onready var music_fade:Tween = $music_fade
 
 var card_selected:bool = false
 
 
 func _ready():
 	player = Player.new()
+	fade_music(music_resources.menu, 0)
 	
 	Signals.connect("start", self, "start")
 	Signals.connect("card_selected", self, "_on_card_selected")
@@ -56,7 +64,7 @@ func start():
 	
 	interface_fade.interpolate_property(interface, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	interface_fade.start()
-	music.play()
+	fade_music(music_resources.game_loop_1, 2.0)
 	next_scenario()
 
 
@@ -143,6 +151,21 @@ func _on_card_selected(card:Card):
 	Signals.emit_signal("outcome_triggered", outcome, player)
 
 
+func fade_music(to_audio:AudioStream, time_between:float = 2.0):
+	if music.playing:
+		music_fade.interpolate_property(music, 'volume_db', music.volume_db, -80, MUSIC_FADE_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		music_fade.start()
+		yield(music_fade, "tween_completed")
+	
+	yield(get_tree().create_timer(time_between), "timeout")
+	
+	music.stream = to_audio
+	music.play()
+	
+	music_fade.interpolate_property(music, 'volume_db', music.volume_db, 0, MUSIC_FADE_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	music_fade.start()
+
+
 func _on_scenario_started(scenario):
 	card_selected = false
 	river_animations.play("move")
@@ -164,3 +187,19 @@ func _on_river_animation_finished(anim_name):
 
 func _on_emotion_changed(emotion):
 	Signals.emit_signal("player_changed", player)
+
+
+func _on_music_fade_tween_completed(object, key):
+	pass # Replace with function body.
+
+
+func _on_music_finished():
+	var next_audio
+	if current_scenario == null:
+		# No scenario means menu
+		next_audio = music_resources.menu
+	else:
+		if music.stream == music_resources.game_loop_1:
+			next_audio = music_resources.game_loop_2
+	
+	fade_music(next_audio)

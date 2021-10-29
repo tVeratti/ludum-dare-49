@@ -258,13 +258,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.657354, -0.0187214 
 modulate = Color( 1, 1, 1, 0.282353 )
 frames = SubResource( 3 )
 animation = "New Anim"
-frame = 2
 playing = true
 
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
 frames = SubResource( 10 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]
@@ -365,4 +364,7 @@ autoplay = true
 
 [node name="interface_fade" type="Tween" parent="."]
 
+[node name="music_fade" type="Tween" parent="."]
+
 [connection signal="animation_finished" from="scenario/river_animations" to="." method="_on_river_animation_finished"]
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

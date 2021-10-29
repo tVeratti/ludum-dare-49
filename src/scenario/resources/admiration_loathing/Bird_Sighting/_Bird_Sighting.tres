@@ -9,6 +9,7 @@
 script = ExtResource( 1 )
 title = "Bird Sighting"
 flavor_text = "A colorful bird perches near you, seemingly unafraid of your presence"
+type = 0
 order = 0
 cards = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
 primary_scale = 3

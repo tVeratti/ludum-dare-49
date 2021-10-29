@@ -9,6 +9,7 @@
 script = ExtResource( 1 )
 title = "Tree Trunk"
 flavor_text = "A rotting tree trunk sits in front of you. It doesn't look very stable and won't stand much longer."
+type = 0
 order = 0
 cards = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
 primary_scale = 1

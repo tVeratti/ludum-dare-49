@@ -9,6 +9,7 @@
 script = ExtResource( 3 )
 title = "Hidden Treasure"
 flavor_text = "You see a mound of fresh earth. Someone or something has clearly just dug and re-buried a hole."
+type = 0
 order = 0
 cards = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ]
 primary_scale = 2

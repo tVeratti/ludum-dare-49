@@ -9,6 +9,7 @@
 script = ExtResource( 1 )
 title = "Go for a hike"
 flavor_text = "Feeling rejuvenated, you set out on a nearby trail to explore the mysteries of this state park."
+type = 0
 order = 2
 cards = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 primary_scale = 0

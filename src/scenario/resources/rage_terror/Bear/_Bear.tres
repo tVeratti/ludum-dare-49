@@ -9,6 +9,7 @@
 script = ExtResource( 1 )
 title = "Distant Bear"
 flavor_text = "In the distance you see a bear exploring near an open field."
+type = 0
 order = 0
 cards = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 primary_scale = 0
