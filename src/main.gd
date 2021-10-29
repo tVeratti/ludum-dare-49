@@ -201,5 +201,7 @@ func _on_music_finished():
 	else:
 		if music.stream == music_resources.game_loop_1:
 			next_audio = music_resources.game_loop_2
+		else:
+			next_audio = music_resources.game_loop_1
 	
 	fade_music(next_audio)
