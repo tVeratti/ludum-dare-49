@@ -6,8 +6,8 @@
 script = ExtResource( 1 )
 title = "Guh"
 flavor_text = "Even though you followed the directions perfectly on the expensive dehydrated package, your food comes out cold."
-modifier_type = 3
-rage_terror = 0
+modifier_type = 0
+rage_terror = -2
 vigilance_amazement = 1
-ecstasy_grief = 0
-admiration_loathing = 1
+ecstasy_grief = 2
+admiration_loathing = 6

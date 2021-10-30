@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-title = "Grrr"
-flavor_text = "You realize you left your pack open, and furry friend found your food. You only have half left to cook."
+title = ""
+flavor_text = ""
 modifier_type = 0
-rage_terror = -1
+rage_terror = 0
 vigilance_amazement = 0
-ecstasy_grief = 1
-admiration_loathing = 2
+ecstasy_grief = 0
+admiration_loathing = 0
