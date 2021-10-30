@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scenario/resources/ecstasy_grief/Hidden_Treasure/_Hidden_Treasure.tres" type="Resource" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://assets/textures/firelight3.png" type="Texture" id=28]
 [ext_resource path="res://title.tscn" type="PackedScene" id=29]
 [ext_resource path="res://scenario/resources/Fishing.tres" type="Resource" id=30]
+[ext_resource path="res://scenario/resources/Rummage_Backpack.tres" type="Resource" id=31]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -225,7 +226,7 @@ tonemap_mode = 2
 
 [node name="main" type="Spatial"]
 script = ExtResource( 1 )
-scenarios = [ ExtResource( 2 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 30 ) ]
+scenarios = [ ExtResource( 2 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 30 ), ExtResource( 31 ) ]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 0.1, 0, 0, -1.36461 )
@@ -265,7 +266,6 @@ playing = true
 [node name="fire" type="AnimatedSprite3D" parent="Fire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035, 0.843142, 0.153006 )
 frames = SubResource( 10 )
-frame = 5
 playing = true
 
 [node name="hand" parent="." instance=ExtResource( 5 )]

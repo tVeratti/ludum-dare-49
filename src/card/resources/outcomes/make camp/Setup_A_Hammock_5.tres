@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-title = ""
-flavor_text = ""
-modifier_type = 0
+title = "Memories"
+flavor_text = "As you tighten the straps around a tree, you remember who taught you how to hang a hammock. You know you won't get the chance to see them again, but somehow they feel...near."
+modifier_type = 5
 rage_terror = 0
 vigilance_amazement = 0
-ecstasy_grief = 0
+ecstasy_grief = 2
 admiration_loathing = 0

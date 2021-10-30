@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Family Matters"
+flavor_text = "The most recent entry is a fight you had with your parents. They are struggling to understand you, and it's hard for you to not get mad about it. But, you know they mean well and love you anyway."
+modifier_type = 6
+rage_terror = 0
+vigilance_amazement = -1
+ecstasy_grief = 0
+admiration_loathing = -2

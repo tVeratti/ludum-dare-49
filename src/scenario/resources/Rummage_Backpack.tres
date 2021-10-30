@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://scenario/scenario.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/cards/rummage backpack/Burn_Journal.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/cards/rummage backpack/Read_The_Journal.tres" type="Resource" id=3]
+[ext_resource path="res://card/resources/cards/rummage backpack/Write_In_Journal.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "Rummage through Backpack"
+flavor_text = "You dig through your backpack and find a journal you've been writing in for the past year."
+type = 0
+order = 0
+cards = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+primary_scale = 3

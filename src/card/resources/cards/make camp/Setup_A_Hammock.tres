@@ -1,13 +1,14 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://card/card.gd" type="Script" id=1]
 [ext_resource path="res://card/resources/outcomes/make camp/Setup_A_Hammock_3.tres" type="Resource" id=2]
 [ext_resource path="res://card/resources/outcomes/make camp/Setup_A_Hammock_1.tres" type="Resource" id=3]
 [ext_resource path="res://card/resources/outcomes/make camp/Setup_A_Hammock_2.tres" type="Resource" id=4]
 [ext_resource path="res://card/resources/outcomes/make camp/Setup_A_Hammock_4.tres" type="Resource" id=5]
+[ext_resource path="res://card/resources/outcomes/make camp/Setup_A_Hammock_5.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 1 )
 title = "Setup your Hammock"
 flavor_text = ""
-outcomes = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ]
+outcomes = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ]

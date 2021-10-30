@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Sobs"
+flavor_text = "As you start to write, you feel nauseous. Feelings you don't want to deal with are bubbling up. You stop writing, look around you, and quietly cry."
+modifier_type = 7
+rage_terror = 0
+vigilance_amazement = 0
+ecstasy_grief = 1
+admiration_loathing = 1

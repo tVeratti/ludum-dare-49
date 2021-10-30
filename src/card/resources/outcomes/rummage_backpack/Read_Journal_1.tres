@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Nostalgia"
+flavor_text = "You read an entry from the Summer where you spent the day volunteering. It was beautiful, and you were with friends. You remember a lot of laughter."
+modifier_type = 6
+rage_terror = 0
+vigilance_amazement = 0
+ecstasy_grief = -1
+admiration_loathing = -2

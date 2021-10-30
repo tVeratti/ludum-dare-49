@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/outcomes/rummage_backpack/Read_Journal_3.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/outcomes/rummage_backpack/Read_Journal_1.tres" type="Resource" id=3]
+[ext_resource path="res://card/resources/outcomes/rummage_backpack/Read_Journal_2.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "Read the Journal"
+flavor_text = ""
+outcomes = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ]

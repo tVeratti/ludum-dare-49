@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/outcomes/rummage_backpack/Burn_Journal_2.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/outcomes/rummage_backpack/Burn_Journal_1.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+title = "Burn the journal"
+flavor_text = ""
+outcomes = [ ExtResource( 3 ), ExtResource( 2 ) ]

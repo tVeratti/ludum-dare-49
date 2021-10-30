@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Regrets"
+flavor_text = "You drop the journal into the fire and hope it will cleanse you of the bad Summer, but as you watch it burn, you immediately regret doing it."
+modifier_type = 5
+rage_terror = 0
+vigilance_amazement = 0
+ecstasy_grief = 2
+admiration_loathing = 2
