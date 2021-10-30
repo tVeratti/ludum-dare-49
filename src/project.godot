@@ -70,6 +70,10 @@ Symbols="*res://infrastructure/symbols.gd"
 
 window/size/width=1280
 window/size/height=720
+window/size/test_width=1280
+window/size/test_height=720
+window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/enabled=true
 window/stretch/shrink=2.0
 
 [physics]

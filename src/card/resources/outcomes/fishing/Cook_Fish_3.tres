@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "CRUNCH!"
+flavor_text = "You cook the fish and as you enjoy the meal, you bite into one too many bones. The fish tastes great, but you should have taken your time in preparing it."
+modifier_type = 7
+rage_terror = 0
+vigilance_amazement = 0
+ecstasy_grief = 1
+admiration_loathing = 1

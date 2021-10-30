@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://card/outcome.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+title = "Just a few more minutes"
+flavor_text = "The fish is ready to be thrown into a foil packet, but after starting to cook it, you realize you don't know how long to cook it for. It comes out a little chewy but still delicious."
+modifier_type = 2
+rage_terror = 0
+vigilance_amazement = -2
+ecstasy_grief = 0
+admiration_loathing = -1

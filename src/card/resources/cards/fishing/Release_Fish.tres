@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://card/card.gd" type="Script" id=1]
+[ext_resource path="res://card/resources/outcomes/fishing/Release_Fish_2.tres" type="Resource" id=2]
+[ext_resource path="res://card/resources/outcomes/fishing/Release_Fish_1.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+title = "Release fish"
+flavor_text = ""
+outcomes = [ ExtResource( 3 ), ExtResource( 2 ) ]
